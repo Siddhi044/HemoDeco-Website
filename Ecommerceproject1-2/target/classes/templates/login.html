@@ -1,0 +1,1778 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/logo.png}"  src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}" href="#">home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/shop}" href="#">shop</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Sign Up</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Login</h2>
+            <p>Please fill out this to login</p>
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Your Email" class="form-control form-control-lg">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control form-control-lg" placeholder="Password" name="password" id="password">
+                </div>
+                <div th:if="${param.error}" class="alert alert-error text-danger">
+                    Invalid username or password.
+                </div>
+
+                <input type="submit" value="Login" class="btn btn-primary btn-block">
+                <br>
+                <span >Don't have an account <a class="linkControl" href="./register.html"
+                                                th:href="@{/register}">Register here</a></span>
+                <br>
+                <a href="" th:href="@{/forgotpassword}">Forgot password ?</a>
+            </form>
+            <br>
+            <h3>OR</h3>
+            <a href="/oauth2/authorization/google" class="btn btn-primary">Sign-In with google </a>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+    <head>
+        
+
+<script>
+    window.__g_cdnHost = '//qhstatic-sg-s3.mohit.com/__p/static/-i18n-fe-site-market-site';
+    window.__g_cdnHostL = '//qhstaticssl.kujiale.com';
+</script>
+
+<script>
+    window.__g_prCmnCdnHost = '';
+</script>
+
+
+                <meta name="feBu" content="mohit-market-portal-c-home">
+                <meta name="feVersion" content="1741591720429">
+                <meta name="serviceWithStage" content="prod">
+                
+            <script> window.g_ktrackerOptions = window.g_ktrackerOptions || [{"name":"autoInit","value":true,"isBoolean":true,"desc":"是否自动开启"},{"name":"initException","value":true,"isBoolean":true,"desc":"是否开启错误监控"},{"name":"initPagePerformance","value":true,"isBoolean":true,"desc":"是否开启性能监控"},{"name":"initTraceCollector","value":false,"isBoolean":true,"desc":"是否开启行为监控（注意：会导致数据量激增，请根据业务需求进行谨慎调整或 @监控助手二代）"},{"name":"initBizEvent","value":true,"isBoolean":true,"desc":"是否开启业务埋点"},{"name":"getUnhandledrejection","value":true,"isBoolean":true,"desc":"是否收集页面 unhandledrejection 异常"},{"name":"getTryCatch","value":true,"isBoolean":true,"desc":"是否收集异步 API 异常，目前支持 setTimeout、setInterval、requestAnimationFrame、requestIdleCallback"},{"name":"getPagePerformance","value":true,"isBoolean":true,"desc":"是否获取页面性能数据"},{"name":"getResourcePerformance","value":true,"isBoolean":true,"desc":"是否获取静态资源性能数据"},{"name":"getAjaxPerformance","value":true,"isBoolean":true,"desc":"是否获取 Ajax 性能数据"},{"name":"getFetchPerformance","value":false,"isBoolean":true,"desc":"是否获取 Fetch 性能数据"},{"name":"localReport","value":false,"isBoolean":true,"desc":"是否开启本地日志上报"},{"name":"reportCountLimitPerMinute","value":2700,"isBoolean":false,"desc":"每分钟上报限流数量"},{"name":"maxStackDepth","value":10,"isBoolean":false,"desc":"高级配置，错误栈格式化解析最大解析深度"},{"name":"slowThreshold","value":16000,"isBoolean":false,"desc":"高级配置，慢会话耗时定义 (ms)"},{"name":"userWhiteList","value":"","isBoolean":false,"desc":"高级配置，用户采样白名单（仅obsId格式，且最多可设置5个）"},{"name":"visitSample","value":0.5,"isBoolean":false,"desc":"高级配置，页面访问采样 [0, 1]"},{"name":"longTaskSample","value":0.1,"isBoolean":false,"desc":"高级配置，长任务采样 [0, 1]"}] </script>
+            <script src="//qhstatic-sg-s3.coohom.com/mc/2.10.1/ktracker.min.js"></script>
+            
+<script src="//qhstatic-sg-s3.coohom.com/text/javascript/1736762687964/kio.3.11.2.prod.js"></script>
+
+<script>
+    window.g_kio = {
+    'selfDomain': 'mohit',
+    'pageName': 'mohit-market-portal-c-home',
+    'pageDescription': 'mohit-market-portal-c-home',
+    'namespaceId': 'qkWL',
+    'userId': '',
+    'youke': '',
+    'rootAccountId': ''
+};
+    window.__g_cdnHost_a19f397477a326037e702e2aaa65ddab = "//qhstatic-sg-s3.mosit.com/__p/static/-i18n-fe-site-market-site";
+</script>
+            <link  rel="stylesheet" type="text/css" href="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-market-site/pages/coohom-market-portal-c-home/entry.a0b1419fadabf432f79d.css?pn=coohom-market-portal-c-home&ps=1488870" ps="1488870" crossorigin="anonymous">
+<script type="pub-meta" pt="page" pn="mohit-market-portal-c-home" pv="defualttag" ps="1488870"></script><link rel="dns-prefetch" href="//qhstatic-sg-s3.coohom.com"><meta charset="utf-8" />
+<meta http-equiv="x-dns-prefetch-control" content="on"/>
+<link rel="preconnect" href="//qhstatic-sg-s3.coohom.com/" crossorigin/>
+<link rel="dns-prefetch" href="//qhstatic-sg-s3.coohom.com/" />
+<link rel="preconnect" href="//qhstaticssl.coohom.com/" crossorigin/>
+<link rel="dns-prefetch" href="//qhstaticssl.coohom.com/" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="qc:admins" content="2031037737665630511236375" />
+<meta property="wb:webmaster" content="a9f04016e01c7a96" />
+<meta name="baidu-site-verification" content="OrRQylgvFq" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="cluster" content="_">
+<link rel="shortcut icon" href="https://qhstaticssl.coohom.com/image/vndmicrosofticon/1725242616737/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"><link rel="canonical" href="https://www.coohom.com"><meta kjl-global="userid" content="null" /><script>window.ensw=window.ensw===undefined?(location.hostname === 'www.coohom.com'):window.ensw;if ('serviceWorker' in navigator && window.ensw) {
+    navigator.serviceWorker.register('/__sw.js', { scope: '/' }).catch(function(error) {
+        console.log('failed with ' + error);
+    });
+}
+</script>
+<script>
+(function(){
+    var isIfr = false;
+    try {
+        isIfr = window.parent !== window;
+    } catch (e) {
+        isIfr = true;
+    }
+    var logout = !isIfr && false;
+    if (logout) {
+        var xhr = new XMLHttpRequest();xhr.open('post', '/api/logout');xhr.timeout=3000;xhr.onload=xhr.onerror=xhr.ontimeout=function(e){console.log(e);location.reload()};xhr.send();
+    }
+})();
+</script>
+
+<script>
+    function updateQueryStringParameter(url, key, value) {
+        if (!value) {
+            var regex = new RegExp(`([?&])${key}=[^&#]*[&#]?`, 'i');
+            url = url.replace(regex, '$1').replace(/&$/, '').replace(/\?$/, '');
+        } else {
+            var regex = new RegExp(`([?&])${key}=([^&#]*)`, 'i');
+            var separator = url.indexOf('?') !== -1 ? '&' : '?';
+            if (url.match(regex)) {
+                url = url.replace(regex, `$1${key}=${value}`);
+            } else {
+                url = `${url}${separator}${key}=${value}`;
+            }
+        }
+        return url;
+    }
+    function updateHl(lang) {
+        var newUrl = updateQueryStringParameter(window.location.href, 'hl', lang);
+        history.replaceState({}, '', newUrl);
+    }
+</script>
+<script>
+    if (window.location.host.includes('b-') || window.location.host.includes('b.')) {//处理B站路径逻辑
+        var origin = window.location.origin.replace('b-', '').replace('b.', 'www.');
+        window.location.href = origin + window.location.pathname + (window.location.hash?window.location.hash:'');
+    }
+    window.addEventListener("DOMContentLoaded", function () { //添加DOMContentLoaded事件
+        var links = document.querySelectorAll('a');
+        if (links && links.length > 0) {
+            links.forEach(l => {
+                l.setAttribute('kpm', 'off');
+            });
+        }
+    }, false);
+    var lang = 'en';
+    var hl = '';
+    // 分站默认语言不一定为英语，需要跟主站逻辑做区分
+    window.coohom_subSiteConfig = "";
+    if(window.coohom_subSiteConfig) {
+        const locale = 'en_US';
+        if(window.autoUpdateHlDisabled !== true) {
+            if(locale !== window.coohom_subSiteConfig.defaultLocale) {
+                updateHl(locale)
+            } else {
+                updateHl('')
+            }
+        }
+    } else {
+        (lang !== 'en' || hl) && window.autoUpdateHlDisabled !== true && updateHl(lang);
+    }
+    // 存储UTM信息
+    var urlParams = {};
+    window.location.search.slice(1).split('&').forEach(function(param) {
+        var keyValue = param.split('=');
+        var key = decodeURIComponent(keyValue[0]);
+        var value = decodeURIComponent(keyValue[1] || '');
+        urlParams[key] = value;
+    });
+    var utmInfo = {
+        source: urlParams['utm_source'],
+        medium: urlParams['utm_medium'],
+        campaign: urlParams['utm_campaign'],
+        term: urlParams['utm_term'],
+        content: urlParams['utm_content']
+    };
+    try{
+        var utmInfoStr = JSON.stringify(utmInfo);
+        utmInfoStr!=='{}'&&sessionStorage.setItem('utm_info', utmInfoStr);
+    }catch(error){
+        console.error(error);
+    } 
+</script>
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    window.dataLayer.push(['js', new Date()]);
+    window.addEventListener('load', function () {
+        function appendScript(src) {
+            var script = document.createElement('script');
+            script.src = src;
+            document.body.append(script);
+        }
+        appendScript("https://www.googletagmanager.com/gtm.js?id=GTM-K936WG5")
+    });
+</script>
+<!-- End Google Tag Manager -->
+<script>
+    window.isProd = true;
+    window.g_stage = 'prod';
+    window.g_pubBucket = {"homeVideoTabStyle":{"id":3356,"experimentKey":"homeVideoTabStyle","optimized":true,"version":"OPTIMIZED","name":"首页视频切换按钮"},"home_register_experiment":{"id":3023,"experimentKey":"home_register_experiment","optimized":true,"version":"original","name":"首页注册转化实验"},"homesite_newuser_guide_workplace":{"id":3405,"experimentKey":"homesite_newuser_guide_workplace","optimized":true,"version":"OPTIMIZED","name":"新版首页注册引导实验"},"home_design_video":{"id":3651,"experimentKey":"home_design_video","optimized":true,"version":"EXPERIMENT","name":"首页3d设计展示视频素材实验"},"home_light_theme_exp":{"id":3231,"experimentKey":"home_light_theme_exp","optimized":true,"version":"NOTION","name":"首页白色版本实验"},"home_ideas_list":{"id":3555,"experimentKey":"home_ideas_list","optimized":true,"version":"EXPERIMENT","name":"首页ideas推荐列表分桶"},"c_home_seo_experiment":{"id":3016,"experimentKey":"c_home_seo_experiment","optimized":false,"version":"ORIGINAL","name":"主站首页SEO分桶实验"},"emailFirstRegisterExperiment":{"id":3539,"experimentKey":"emailFirstRegisterExperiment","optimized":false,"version":"ORIGINAL","name":"登录注册优先引导邮箱注册实验"},"modelRegisterForFreeMembership":{"id":3689,"experimentKey":"modelRegisterForFreeMembership","optimized":false,"version":"ORIGINAL","name":"模型注册转化提升专项- 注册后送3天免费会员"},"signup_login_v1_test":{"id":2680,"experimentKey":"signup_login_v1_test","optimized":false,"version":"ORIGINAL","name":"SEO注册优化实验V1.0"}};
+    window.g_cdnDomain = '//qhstatic-sg-s3.coohom.com';
+    window.g_selfDomain = 'coohom';
+    window.g_userType = {};
+    window.g_userInfo = {};
+    window.currentUser = {"userType":null,"userVersion":null,"rootAccountId":""};
+    window.g_locale = 'en_US';
+    window.g_lang = 'en';
+    window.g_hlLocaleMap = {"zh-CN":"zh_CN","zh-TW":"zh_TW","en":"en_US","ja":"ja_JP","fr":"fr_FR","de":"de_DE","ko":"ko_KR","vi":"vi","es":"es_ES","it":"it_IT","ru":"ru_RU","th":"th_TH","pt":"pt_PT","ms":"ms_MY","tr":"tr_TR","zh_CN":"zh-CN","zh_TW":"zh-TW","en_US":"en","ja_JP":"ja","fr_FR":"fr","de_DE":"de","ko_KR":"ko","es_ES":"es","it_IT":"it","ru_RU":"ru","th_TH":"th","pt_PT":"pt","id_ID":"id","ms_MY":"ms","tr_TR":"tr","id":"id_ID","ar_EG":"ar","ar":"ar_EG","pl_PL":"pl_PL"};
+    window.g_inApp = false;
+    window.g_mobile = false;
+    window.g_mobileType = '';
+    window.g_inClient = false;
+    window.g_pubInfo = {
+        appName: 'coohom-market-portal-c-home'
+    };
+    if (window.g_kio) {
+        window.g_kio.qhSubLocale = '';
+    }
+</script>
+
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://qhstaticssl.coohom.com/newt/101373/image/jpeg/1631242435137/BA977ACF2ECC933F54B9B71DA1CA77D4.jpg" />
+<script>
+            window.urlConfig = {"iconfont":"//at.alicdn.com/t/font_909371_jov880xrov","help_center":"https://support.coohom.com","image_cdn_domain":"//qhstaticssl.kujiale.com/newt","accountsetting":"/pub/saas/settings/account","homepage":"","project":"/pub/saas/apps/project/list","pricingpage":"/pub/market/portal/pricing","enterprisepage":"/pub/market/portal/home#Solutions","payment_cdn":"https://cf.coohom.com/i18n/commercial-hive/payment/0.0.8/checkoutiframe.js","workbench":"/pub/saas/workbench","logo":{"white":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573196383187/D15B205682B6B06E6ACC05BA80FA7ECE.png","white_2x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573196383189/5109DFB14ADB8B15151F3355CEB04F7A.png","white_3x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573196383180/CBB0F748760631B760672AEDF382669E.png","blue":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573193251284/913F979990A8D640E160C5755305504C.png","blue_2x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573193251296/1D4E58DCBB3F0305D5242F36A0100F64.png","blue_3x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573193251351/8177B8C994434D01FCE875774B2566F2.png","grey":"//qhstaticssl.kujiale.com/newt/36/image/svgxml/1569231932166/59E3893BD7343099959B578C955AA9B4.svg"},"favicon":"//qhstaticssl.kujiale.com/newt/36/image/png/1569233357136/FBBB4709AF48AE4B87910E2D23227E7F.png","consultation_form":"https://share.hsforms.com/1PznvMiWXTyKdZLT3qr3gdg4irvw"}
+            window.LangData = {"CM-HomeTitle":"mohit: 2024 Best Free Home and Interior Design Software and Tools","CM-HomeDescription":"Create 3D visualizations and render in minutes with Coohom's all-in-one interior design tool. ","CM-HomeT1":"Powerful Interior Design Tools with the Fastest Photo-Realistic Rendering","CM-TryNowForFree":"Try Now for Free","CM-BusinessSolutions":"Business Solutions","CM-Easy2UseFloorPlanner":"<span style=\"color: #3a4df3\">Easy to Use</span> Floor Planner","CM-Easy2UseFloorPlanner-Desc":"Use the intuitive, drag-and-drop interface to easily create 3D designs. Easy to learn, and packed with powerful features, our Floor Planner is the ultimate tool for interior designers.","CM-DesignForFree":"Design for Free","CM-FastCloudRendering":"<span style=\"color: #f5a623\">Lightning-Fast</span> Cloud Rendering","CM-4KQuality":"4K Quality","CM-RenderIn10Seconds":"Render in 10 Seconds","CM-FastCloudRendering-Desc":"Transform your design into gorgeous 3D renderings in seconds. Let your clients see exactly how your finished product will look in beautiful 4K.","CM-DesignAndRender":"Design and Render","CM-70KPlusModels":"<span style=\"color: #50e3c2\">300,000+</span> Models Available","CM-70KPlusModels-Desc":"From furniture to lighting, to decor, use our extensive library of assets in your design. With tens of thousands to choose from, the perfect 3D model is just a few clicks away.","CM-ExploreModels":"Explore the Models","CM-View720Tour":"View 720 Tour","CM-MoreFeatures2Boost":"More Features to Boost Your Design","CM-BuiltInAIDecorator":"Built-In AI Decorator","CM-BuiltInAIDecorator-Desc":"Fill your room on the fly. Choose a template and let our AI decorator take control, giving you a fully-furnished starting point.","CM-Full720VirtualTours":"Full 720 Virtual Tours","CM-Full720VirtualTours-Desc":"Use your rendered design to generate a full 720 tour in seconds, then walk through your own creation in complete HD detail.","CM-BrandSlogan":"REALIZING IMAGINATION","CM-GetInspired":"Get Inspired","CM-GetInspired-Desc":"Browse the latest and greatest designs created with the Coohom platform","CM-ViewAllProjects":"View All Projects","CM-FeaturedModels":"Featured Models","CM-FeaturesModels-Desc":"Take a look at our massive library of 3D assets","CM-ViewAllModels":"View All Models","CM-Over4MDesignersTrustCoohom":"Over 4M interior designers trust Coohom","CM-Roisin":"\"Coohom is a fantastic tool for any interior designer. Easy to use with an expansive choice of furnishings to suit any aesthetic. The 3D rendering process is quick and produces high quality images for clients.\"","CM-KoraliaGiori":"\"Coohom made my workflow much faster. You can customize your interior and exterior spaces until perfection. My clients are impressed by the 4K renders I can provide them.\"","CM-ExperienceRenderingTech":"Experience industry leading rendering technology.","CM-WhatYouWaitingFor":"It's time to GROW SALES, and EXPAND BUSINESS.","CM-SignUpForFree":"Sign up for free","CM-LearnTeamLicenses":"For Business Solution Demo","CM-GetStartedDesign":"Get Started","CM-RegisterActivityTip":"Get a Free 1-Month Pro Subcription (no credit card required)","CM-RegisterActivityButton":"Join Now","CM-30KPlusModels":"<span style=\"color: #50e3c2\">300,000+</span> Models Available","CM-DesignCommunity":"Design community","CM-DesignCommunity-Desc":"Find inspiration from Coohom designers","coohom.csite.home.s1.h0":"Coohom, the all-in-one 3D design tool","coohom.csite.home.s1.d0":"Build a 3D home in 10 minutes, render a stunning video in 1 minute.","coohom.csite.home.s1.b1":"Start for FREE! Click here！","coohom.csite.home.s1.b2":"Enterprise free trial","coohom.csite.home.s2.h0":"Fabulous videos","coohom.csite.home.s2.d1":"interior designers worldwide","coohom.csite.home.s2.d2":"projects rendered daily","coohom.csite.home.s2.d3":"3D product models to deploy","coohom.csite.home.s2.b1":"Start NOW !!!","coohom.csite.home.s2.b2":"Explore MORE","coohom.csite.home.s3.h0":"Create with Coohom","coohom.csite.home.s3.d0":"Smart AI templates with abundant 3D model library to empower your design.","coohom.csite.home.s3.b3":"360° Panoramas","coohom.csite.home.s4.h0":"Easily Master Design","coohom.csite.home.s4.d0":"Just 3 easy steps to get stunning results!","coohom.csite.home.s4.h1":"<span>Step1: </span> <em>Draw</em> a floor plan","coohom.csite.home.s4.d1":"Draw a floor plan which shows both in 2D and 3D in minutes.","coohom.csite.home.s4.h2":"<span>Step2: </span><em>Furnish</em> the room","coohom.csite.home.s4.d2":"Furnish the room with over 750,000 exquisite 3D models.","coohom.csite.home.s4.h3":"<span>Step3:  </span>Generate <em>Images or Videos</em>","coohom.csite.home.s4.d3":"Get photo-realistic renderings and panoramas in seconds!","coohom.csite.home.s4.b1":"Start for FREE","coohom.csite.home.s5.h0":"Get inspired","coohom.csite.home.s5.d0":"To build a worldwide home designer community for creatives to discover and connect, share and grow.","coohom.csite.home.s6.h0":"Why choose Coohom?","coohom.csite.home.s6.b1":"Online Tutorials","coohom.csite.home.s3.b1":"Images","coohom.csite.home.s3.b2":"Videos","coohom.csite.home.s5.b1":"Join Now!!!","coohom.csite.home.s7.h0":"Where ideas turn into stunning designs","coohom.csite.home.s7.d0":"Use Coohom to visualize your dream home","PREVIOUS_221202143759":"Previous","NEXT_221202143759":"Next","coohom.csite.home.s5.b2":"View","coohom.csite.home.s1.t1":"See what's new","coohom.csite.home.s2.d0":"created by our users","coohom.csite.home.s2.h1":"8M +","coohom.csite.home.s2.h2":"400K +","coohom.csite.home.s2.h3":"300K +","MARKET_SITE_BANNER_AIGC_TITLE":"Coohom AI-powered photography tool","MARKET_SITE_BANNER_AIGC_DESCRIPTION":"Create stunning product photos in seconds.","MARKET_SITE_BANNER_AIGC_BUTTON":"Try Now","coohom.csite.home.s1.h1":"Coohom Affiliate Partner Program","coohom.csite.home.s1.d1":"Join now to promote the best 3D visualization software and earn $2000+ per month!","coohom.csite.home.s1.b3":"Join now to earn","COOHOM_THE_ALL_IN_ONE_3D_DESIGN_TOOL_230911143428":"The World's No.1 Home Design Software of 2024","BUILD_A_3D_HOME_IN_10_MINUTES_RENDER_A_STUNNING_VI_230911143514":"The All-in-one 3D Design Platform. Build a 3D home in 10 minutes, render a stunning visual in 10 seconds.","START_FOR_FREE_230911143654":"Start for FREE! ","ENTERPRISE_FREE_TRIAL":"Enterprise free trial","COOHOM_PRO_ADVANCED_FEATURES_BETTER_PRICE":"Coohom Pro: Advanced Features, Better Price","FAST_RENDERING_UNLIMITED_HIGH_RESOLUTION_RENDERING":"Fast Rendering & Unlimited High-Resolution Renderings","REMOVABLE_CUSTOM_WATERMARK":"Removable & Custom Watermark","400_000_3D_MODELS":"400,000+ 3D Models","MORE_FEATURES_":"Millions of Branded Products","GET_40_OFF":"Get 67% OFF!","TRY_IT_NOW_230911144332":"Try It Now","40_OFF":"40% Off","50_000_000_DESIGNERS_FIRST_CHOICE":"50,000,000+ designers‘ first choice","MAKE_DESIGN_SIMPLE_MAXIMIZE_DESIGN_EFFICIENCY":"Make Design Simple, Maximize Design Efficiency","LIMITED_TIME":"Limited-time","coohom.homepage.banner2.item1":"Unleash Your Design Vision. Craft Stunning Interiors with Ease","coohom.homepage.banner2.item2":"Coohom Pro","coohom.homepage.banner2.item3":"Unlimited 8K rendering & Render 1 picture in 1 minute","coohom.homepage.banner2.item4":"Up to 1080P ultra-fast video  rendering","coohom.homepage.banner2.item5":"Immersive 360° Walkthroughs","coohom.homepage.banner2.item6":"AI-Powered Design Tool","coohom_landingpagelab_BubblesText1":"Recently, 44 people gave this a 5-star review","coohom_landingpagelab_BubblesText2":"In demand! <b>999 people</b> experienced it.","coohom_landingpagelab_BubblesText3":"<b>95% users reviews</b> are positive","coohom_landingpagelab_ButtonName":"Grab Welcome Gift","coohom_landingpagelab_TimerText1":"Limited Spot! Offer Ends in ","coohom_landingpagelab_TimerText2":" ","coohom_landingpagelab_MembershipBenefits1":"Over <b>1 million models and textures</b>","coohom_landingpagelab_MembershipBenefits2":"High-quality <b>realistic rendering</b>","coohom_landingpagelab_MembershipBenefits3":"8K Images 1080P Videos 32K Walkthroughs</b>","coohom_landingpagelab_user_reviews":"COOHOM is trusted by 3 million+ contractors & design pros","coohomhomepage_bannnerone_title_test":"The World's No.1 Home Design Software of 2024","coohomhomepage_bannnerone_describition_text":"The All-in-one 3D Design Platform. Build a 3D home in 10 minutes, render a stunning visual in 10 seconds.","coohomhomepage_bannerone_button":"Try Super Render Now","coohom_homesite_membertestversion_banner1_button":"Grab Your welcome gift","coohom_homesite_testversio_download_button":"Download Coohom for  FREE","Homesite_G2_title":"Trusted by the best in home design software rankings","Homesite_G2_Description":"Leader in Visual Configuration, Product Customization, 3D Rendering, and 3D Modeling.","Homesite_G2_Button":"Read Reviews","Coohom_site_reviews":"other Reviews","coohom_homesite_metatitle":"World No.1 Home Design Software of 2025","coohomsite_US_exhibition_title":"Reserve Your Spot! Meet Coohom at KBIS 2025 in Las Vegas, Feb 25-27!","coohomsite_US_exhibition_button":"Check it out","coohomsite_us_bookademo_customtitle":"Meet us in Vegas, Feb 25-27!","coohom_site_newbannertitle":"How to Design a Home Online: Free Tools for a Perfect Space","coohom_site_newbannerdesc":"Explore free online tools like Coohom to design your dream home with ease. Start your home design journey today with Coohom!","coohom_site_newbanner1tietle":"Create or Upload a Floor Plan with Coohom – Easy Design","coohom_site_newbanner1desc":"Bring your ideas to life with Coohom! Start from scratch or upload an existing floor plan. Our smart tech converts it to a digital layout in minutes, with drag-and-drop tools and 3D visualization.","coohom_site_newbanner2tietle":"Design & Decorate Your Home in 3D – Endless Possibilities","coohom_site_newbanner2desc":"Transform your home with Coohom’s vast selection of furniture and décor. Choose from thousands of stylish pieces and customize every detail. Design a space that’s uniquely yours, from a room to an entire home.","coohom_site_newbanner3tietle":"Experience Fast, High-Quality 4K Rendering in Real Time","coohom_site_newbanner3desc":"Bring your designs to life instantly with Coohom’s advanced 4K rendering. Enjoy realistic lighting, shadows, and colors, with real-time adjustments for immediate, high-definition results and a seamless experience.","coohom_site_newbanner4tietle":"Unlock Infinite Possibilities with AI-Powered Design","coohom_site_newbanner4desc":"Use Coohom’s AI-driven 3D rendering tools to visualize your home before committing. Make real-time adjustments in a virtual environment and ensure every detail aligns with your vision, avoiding costly mistakes.","coohom.csite.home.workflow.btn.name":"Design for free","coohom.csite.home.banner.3d.render.title":"3D Home Render"};
+            window.homePageConfig = {"coohom_home_notion":{"title":"coohomhomesite_notionversion_title","keywords":"coohomhomesite_notionversion_keywords","description":"coohomhomesite_notionversion_description","topBanner":{"title":"coohomsite_US_exhibition_title","btnText":"coohomsite_US_exhibition_button","link":"https://docs.google.com/forms/d/e/1FAIpQLSdsnIKE39By_CylPbn0Ug5y5ZqX4E0n5HUnnfYkLFxpTTFPwQ/viewform","bannerBtn":{"text":"coohomsite_us_bookademo_customtitle","link":"https://docs.google.com/forms/d/e/1FAIpQLSdsnIKE39By_CylPbn0Ug5y5ZqX4E0n5HUnnfYkLFxpTTFPwQ/viewform"}},"content":[{"component":"banner","argv":{"title":"coohomhomesite_notionversion_banner1_title","desc":"coohomhomesite_notionversion_banner1_desc","primaryBtn":{"text":"coohomhomesite_notionversion_banner1_button1","href":"/pub/saas/workbench?redirecturl=/kitchen-and-bath-design&ctv=kb","source":"","secondarySource":"workbench"},"secondaryBtn":{"text":"coohomhomesite_notionversion_banner1_button2","href":"/b2b/schedule-a-demo","source":"leads"},"list":[{"icon":"/image/svgxml/1716360160718/icon1.svg","title":"coohomhomesite_notionversion_banner1_tab1tittle","desc":"coohomhomesite_notionversion_banner1_tab1desc","secondaryBtn":{"text":"coohomhomesite_notionversion_banner1_tab1desc_button","href":"/case/home-design-software","source":"","needLogin":false,"needBucket":true,"secondarySource":"workbench"},"media":{"poster":"/image/jpg/1721722393471/all-in-one-notion-kb2.jpg","mp4":"all-in-one-notion-kb2.mp4","webm":"all-in-one-notion-kb2.webm","bucket":{"key":"home_design_video","version":{"EXPERIMENT":{"poster":"/image/png/1733386515083/3d-design-test-poster.png","mp4":"compressoed.mp4","webm":"compressoed.webm"}}}}},{"icon":"/image/svgxml/1741069900572/3d-render.svg","title":"coohom.csite.home.banner.3d.render.title","desc":"coohomhomesite_notionversion_banner1_tab3desc","secondaryBtn":{"text":"coohomhomesite_notionversion_banner1_tab3desc_button","href":"/case/3d-render-home","source":"photo-studio","needLogin":false},"media":{"poster":"/image/jpg/1716360154214/banner3.jpg","mp4":"photo_studio.mp4","webm":"photo_studio.webm"}},{"icon":"/image/svgxml/1716360160721/icon4.svg","title":"coohomhomesite_notionversion_banner1_tab4tittle","desc":"coohomhomesite_notionversion_banner1_tab4desc","secondaryBtn":{"text":"coohomhomesite_notionversion_banner1_tab4desc_button","href":"/case/ai-home-design","source":"ai-tool","needBucket":true,"secondarySource":"workbench","needLogin":false},"media":{"poster":"/image/jpg/1716360159540/banner4.jpg","mp4":"ai-step1.mp4","webm":"ai-step1.webm"}},{"icon":"/image/svgxml/1716360160624/icon2.svg","title":"coohomhomesite_notionversion_banner1_tab2tittle","desc":"coohomhomesite_notionversion_banner1_tab2desc","secondaryBtn":{"text":"coohomhomesite_notionversion_banner1_tab2desc_button","href":"/kitchen-and-closet-design","source":"kb","needLogin":false},"media":{"poster":"/image/jpg/1716360186832/banner2.jpg","mp4":"all-in-one-notion-kb.mp4","webm":"all-in-one-notion-kb.webm"}}]}},{"component":"ideas","argv":{"title":"coohomhomesite_notionversion_ideas_title","desc":"coohomhomesite_notionversion_ideas_desc"}},{"component":"workflow","argv":{"title":"coohom_site_newbannertitle","desc":"coohom_site_newbannerdesc","btnName":"coohom.csite.home.workflow.btn.name","btnLink":"/pub/market/portal/thankyou","list":[{"icon":"/image/svgxml/1741056818913/item1-icon.svg","title":"coohom_site_newbanner1tietle","desc":"coohom_site_newbanner1desc","img":"/image/png/1741057227832/item1.png"},{"icon":"/image/svgxml/1741056818887/item2-icon.svg","title":"coohom_site_newbanner2tietle","desc":"coohom_site_newbanner2desc","img":"/image/png/1741057227939/item2.png"},{"icon":"/image/svgxml/1741056818886/item3-icon.svg","title":"coohom_site_newbanner3tietle","desc":"coohom_site_newbanner3desc","img":"/image/png/1741057227999/item3.png"},{"icon":"/image/svgxml/1741056818885/item4-icon.svg","title":"coohom_site_newbanner4tietle","desc":"coohom_site_newbanner4desc","img":"/image/png/1741057227937/item4.png"}]}},{"component":"tools","argv":{"title":"coohomhomesite_notionversion_banner2_title","list":[{"image":{"url":"/image/png/1716360170038/logo1.png"}},{"image":{"url":"/image/png/1716360170028/logo2.png"}},{"image":{"url":"/image/png/1716360170038/logo3.png"}},{"image":{"url":"/image/png/1716360170039/logo4.png"}},{"image":{"url":"/image/png/1716360170024/logo5.png"}}]}},{"component":"designers","argv":{"title":"coohomhomesite_notionversion_banner4_title","desc":"coohomhomesite_notionversion_banner4_desc","secondaryBtn":{"text":"coohomhomesite_notionversion_banner4_button","href":"/pub/saas/workbench?redirecturl=/kitchen-and-bath-design&ctv=kb"},"counts":[{"value":"coohomhomesite_notionversion_banner4_data1","unit":"coohomhomesite_notionversion_banner4_data1_unit","desc":"coohomhomesite_notionversion_banner4_data1title"},{"value":"coohomhomesite_notionversion_banner4_data2","unit":"coohomhomesite_notionversion_banner4_data2_unit","desc":"coohomhomesite_notionversion_banner4_data2title"},{"value":"coohomhomesite_notionversion_banner4_data3","unit":"coohomhomesite_notionversion_banner4_data3_unit","desc":"coohomhomesite_notionversion_banner4_data3title"}],"list":[{"name":"Susan","job":"coohom_site_susan_jobtitle","desc":"coohomhomesite_notionversion_banner5_usercase1","avatar":{"url":"/image/png/1716360170023/avatar1.png"},"image":{"url":"/image/jpg/1716360192843/review1.jpg"}},{"name":"Natalia Wright","job":"coohom_site_Natalia_Wright_jobtitle","desc":"coohomhomesite_notionversion_banner5_usercase2","avatar":{"url":"/image/png/1716360170024/avatar2.png"},"image":{"url":"/image/jpg/1716360202741/review2.jpg"}},{"name":"John Smith","job":"coohom_site_john_smith_jobtitle","desc":"coohomhomesite_notionversion_banner5_usercase3","avatar":{"url":"/image/png/1716360170027/avatar3.png"},"image":{"url":"/image/jpg/1716360197209/review3.jpg"}}]}}]}}
+        </script><meta property="og:title" content="mohit - Free 3D Home Design Software & Floor Planner Online
+"/>
+<meta property="og:url" content="https://www.coohom.com"/>
+<meta name="description" content="Bring your dream home to life effortlessly with mohit's free 2D/3D interior design tool. Explore a wide range of free home design templates, discover endless creative ideas, and browse an extensive collection of high-quality 3D home design models—all completely free!"/>
+<meta name="keywords" content="mohi: House Design Software | Home Design in 3D
+">
+<title>Coohom - Free 3D Home Design Software & Floor Planner Online
+</title>
+<link rel="stylesheet" href="//qhstatic-sg-s3.coohom.com/text/css/1669543468514/splitting.css">
+<script src="//qhstatic-sg-s3.coohom.com/text/javascript/1669790874074/scroll-out.min.js"></script>
+<script src="//qhstatic-sg-s3.coohom.com/text/javascript/1669539599593/splitting.min.js"></script>
+<script>
+            (function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3362498&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+        </script>
+        <script>
+            (function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3362498&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+        </script>
+
+    </head>
+    <body>
+        <micro data-pub-type="cmn-micro">
+    
+<script>window.__g_cdnHost_fa61dd52921628ab148d823e3afb3a5f = "//qhstatic-sg-s3.coohom.com/__p/static/-fe-pub-cmn-micro-base";</script>
+<script type="pub-meta" pn="coohom-market-micros-micro-entry" pv="defualttag" ps="942074"></script>
+
+    
+    
+<script src="//qhstatic-sg-s3.coohom.com/__p/static/-fe-pub-cmn-micro-base/micros/coohom-market-micros-micro-entry/entry.0e5f7010e78353b0220a.js?pn=coohom-market-micros-micro-entry&ps=942074" crossorigin="anonymous"></script>
+    
+</micro>
+        <micro data-pub-type="micro">
+    
+<script>window.__g_cdnHost_169d15367b5740955111cfc3e3fff41f = "//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros";</script>
+<link  rel="stylesheet" type="text/css" href="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros/micros/coohom-market-micros-cmn-c-site-header/entry.4f99563886e7e31d7251.css?pn=coohom-market-micros-cmn-c-site-header&ps=1486394">
+<script type="pub-meta" pt="micro" pn="coohom-market-micros-cmn-c-site-header" pv="defualttag" ps="1486394"></script>
+<script src="//qhstatic-sg-s3.coohom.com/text/javascript/1698133945339/jquery-3.6.0.min.js"></script>
+    <script>
+        (function () {
+            window.cSiteUrlConfig = {"iconfont":"//at.alicdn.com/t/font_909371_jov880xrov","help_center":"https://support.coohom.com","image_cdn_domain":"//qhstaticssl.kujiale.com/newt","accountsetting":"/pub/saas/settings/account","homepage":"","project":"/pub/saas/apps/project/list","pricingpage":"/pub/market/portal/pricing","enterprisepage":"/pub/market/portal/home#Solutions","payment_cdn":"https://cf.coohom.com/i18n/commercial-hive/payment/0.0.8/checkoutiframe.js","workbench":"/pub/saas/workbench","logo":{"white":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573196383187/D15B205682B6B06E6ACC05BA80FA7ECE.png","white_2x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573196383189/5109DFB14ADB8B15151F3355CEB04F7A.png","white_3x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573196383180/CBB0F748760631B760672AEDF382669E.png","blue":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573193251284/913F979990A8D640E160C5755305504C.png","blue_2x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573193251296/1D4E58DCBB3F0305D5242F36A0100F64.png","blue_3x":"//qhstaticssl.kujiale.com/newt/100200/image/png/1573193251351/8177B8C994434D01FCE875774B2566F2.png","grey":"//qhstaticssl.kujiale.com/newt/36/image/svgxml/1569231932166/59E3893BD7343099959B578C955AA9B4.svg"},"favicon":"//qhstaticssl.kujiale.com/newt/36/image/png/1569233357136/FBBB4709AF48AE4B87910E2D23227E7F.png","consultation_form":"https://share.hsforms.com/1PznvMiWXTyKdZLT3qr3gdg4irvw"};
+            var config = window.coohom_header_config || {};
+            if (config.theme) {
+                document.body.className += ' coohom-header-theme-' + config.theme;
+            }
+            if (config.fixed) {
+                document.body.className += ' coohom-header-fixed';
+            }
+            window.cSiteHelpCenterConfig = {"meta":{"priority":0,"link":""},"TH":{"link":"https://coohomth.notion.site/COOHOM-f15eb98230674e8283b857d7b3dfe1d6"},"KR":{"link":"https://coohom.notion.site/ef6d4fca2c4a4ba59c453fc65dc2f86e?v=ee9be360f05e40b3bc38b91b249de011"}}
+            window.cSiteAffiliateConfig = {"ID":{"link":"https://www.e.coohom.com/affiliate-program/id"},"VN":{"link":"https://www.e.coohom.com/affiliate-program/vi"},"TH":{"link":"https://www.e.coohom.com/affiliate-program/th"},"TR":{"link":"https://www.e.coohom.com/affiliate-program/tr"},"FR":{"link":"https://www.e.coohom.com/affiliate-program/fr"},"IT":{"link":"https://www.e.coohom.com/affiliate-program/it"},"DE":{"link":"https://www.e.coohom.com/affiliate-program/de"}}
+        })();
+    </script>
+    <header id="c-header" >
+<section id="c-navigation">
+<nav id="c-nav" class="navbar navbar-expand-lg position-fixed optimized-menu">
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <a href="/">
+				<a class="navbar-brand" href="#">
+				           <img th:src="@{/images/logo.png}"  src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>
+				       </a>
+            </a><div class="navigation-top-menu-item-wrapper dropdown">
+    
+    <div class="dropdown-menu" id="sub-menu-entry">
+        <ul class="dropdown-menu-inner">
+            <li>
+                <a href="/b2b/" target="_blank" rel="noopener noreferrer">Enterprise</a>
+            </li>
+            <li>
+                <a href="https://open.coohom.com/" target="_blank" rel="noopener noreferrer nofollow">Open Platform</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="lang-select-wrapper dropdown" id="lang-selector">
+    <button class="nav-lang-btn" type="button" id="dropdownLangMenuButton" data-bs-trigger="click" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="lang-name">English</span>
+        <span class="icon-arrow" data-type="icon" data-icon-name="UpOutlined"></span>
+    </button>
+    <div class="lang-dropdown-menu-wrapper dropdown-menu" id="lang-menu" aria-labelledby="dropdownLangMenuButton">
+        <ul class="lang-dropdown-menu-inner">
+                <li class="language-item is-active" data-value="en_US">
+                    <span>English</span>
+                </li>
+                <li class="language-item" data-value="ja_JP">
+                    <span>日本語</span>
+                </li>
+                <li class="language-item" data-value="fr_FR">
+                    <span>Français</span>
+                </li>
+                <li class="language-item" data-value="de_DE">
+                    <span>Deutsch</span>
+                </li>
+                <li class="language-item" data-value="ko_KR">
+                    <span>한국어</span>
+                </li>
+                <li class="language-item" data-value="vi">
+                    <span>Tiếng Việt</span>
+                </li>
+                <li class="language-item" data-value="es_ES">
+                    <span>Español</span>
+                </li>
+                <li class="language-item" data-value="it_IT">
+                    <span>italiano</span>
+                </li>
+                <li class="language-item" data-value="ru_RU">
+                    <span>Русский</span>
+                </li>
+                <li class="language-item" data-value="th_TH">
+                    <span>ภาษาไทย</span>
+                </li>
+                <li class="language-item" data-value="id_ID">
+                    <span>Bahasa Indonesia</span>
+                </li>
+                <li class="language-item" data-value="pl_PL">
+                    <span>Polski</span>
+                </li>
+                <li class="language-item" data-value="ms_MY">
+                    <span>Malay</span>
+                </li>
+                <li class="language-item" data-value="tr_TR">
+                    <span>Türkçe</span>
+                </li>
+                <li class="language-item" data-value="zh_CN">
+                    <span>中文（简体）</span>
+                </li>
+                <li class="language-item" data-value="zh_TW">
+                    <span>中文（繁體）</span>
+                </li></ul>
+    </div>
+</div>
+</div>
+        <div class="navbar-right-toggler">
+			<a class="navbar-brand" href="#">
+			            <img th:src="@{/images/logo.png}"  src="../static/images/logo.png" width="150" height="160" class="d-inline-block align-top" alt=""/>
+			        </a>
+			        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			            <span class="navbar-toggler-icon"></span>
+			        </button>
+            
+<a class="helpcenter-button" href="https://helpcenter.coohom.com" target="_blank" data-key="HelpCenter" rel="noopener noreferrer"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <span class="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div id="c-mobile-nav-actions"><a id="mobileLoginBtn" class="mobile-light-btn">Login</a>
+                    <a id="mobileSignupBtn" class="mobile-primary-btn">Sign Up</a></div>
+            <ul class="navbar-nav"><li >
+                            <div class="nav-dropdown dropdown auto-width">
+                                <a href="
+" class="navbar-nav-item navbar-nav-subitem" id="navbarDropdownProducts" data-bs-trigger="click" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-key="Products">
+                                    <span>Products</span>
+                                    <i data-type="icon" data-icon-name="UpOutlined"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
+                                    <div class="dropdown-menu-inner">
+                                        <ul id="subMenu"><li>
+                                                        <a href="
+/floor-planner" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/floor-planner">
+                                                                Floor Planner
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/interior-designer" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/interior-designer">
+                                                                Interior Design
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/kitchen-and-bath-design" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/kitchen-and-bath-design">
+                                                                Kitchen & Closet Design
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/2D-Design-Tool" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/2D-Design-Tool">
+                                                                AI Home Design 
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/b2b/products/photo-and-video-studio" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/b2b/products/photo-and-video-studio">
+                                                                Photo Studio
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/b2b/products/3dviewer-and-ar" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/b2b/products/3dviewer-and-ar">
+                                                                3D Viewer
+                                                            </span></a>
+                                                </li></ul>
+                                </div>
+                            </div>
+                        </div></li><li >
+                            <div class="nav-dropdown dropdown auto-width">
+                                <a href="
+" class="navbar-nav-item navbar-nav-subitem" id="navbarDropdown3D-Model" data-bs-trigger="click" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-key="3D-Model">
+                                    <span>3D Models</span>
+                                    <i data-type="icon" data-icon-name="UpOutlined"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown3D-Model">
+                                    <div class="dropdown-menu-inner">
+                                        <ul id="subMenu"><li>
+                                                        <a href="
+/3d-model" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/3d-model">
+                                                                Model Library
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+https://e.coohom.com/3d-models-upload-for-brand" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="https://e.coohom.com/3d-models-upload-for-brand">
+                                                                Upload Brand Models
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/accurate-3d-modeling" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/accurate-3d-modeling">
+                                                                 3D Modeling
+                                                            </span></a>
+                                                </li></ul>
+                                </div>
+                            </div>
+                        </div></li><li >
+                            <div class="nav-dropdown dropdown auto-width">
+                                <a href="
+" class="navbar-nav-item navbar-nav-subitem" id="navbarDropdownResources" data-bs-trigger="click" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-key="Resources">
+                                    <span>Resources</span>
+                                    <i data-type="icon" data-icon-name="UpOutlined"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownResources">
+                                    <div class="dropdown-menu-inner">
+                                        <ul id="subMenu"><li>
+                                                        <a href="
+/ideas" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/ideas">
+                                                                Home Design Ideas
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/learn" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/learn">
+                                                                Tutorial
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+https://helpcenter.coohom.com" target="_blank" data-type="subMenuItem" data-key="HelpCenter">
+                                                            <span class="dropdown-menu-item-name" data-link="https://helpcenter.coohom.com">
+                                                                Help Center
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/article" target="_blank" data-type="subMenuItem" data-key="article">
+                                                            <span class="dropdown-menu-item-name" data-link="/article">
+                                                                Article
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+/pub/market/portal/app/download" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/pub/market/portal/app/download">
+                                                                mohit App
+                                                            </span></a>
+                                                </li></ul>
+                                </div>
+                            </div>
+                        </div></li><li >
+                            
+                            <a class="navbar-nav-item " aria-current="page" target="_blank" href="
+/pricing?open_position=pricingtab" data-key="Pricing">
+                                <span>Pricing</span>
+                                
+                            </a></li><li >
+                            <div class="nav-dropdown dropdown auto-width">
+                                <a href="
+" class="navbar-nav-item navbar-nav-subitem" id="navbarDropdownBusiness" data-bs-trigger="click" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-key="Business">
+                                    <span>Business</span>
+                                    <i data-type="icon" data-icon-name="UpOutlined"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownBusiness">
+                                    <div class="dropdown-menu-inner">
+                                        <ul id="subMenu"><li>
+                                                        <a href="
+/b2b/schedule-a-demo" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="/b2b/schedule-a-demo">
+                                                                Enterprise free trial
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+https://www.e.coohom.com/affiliate-program" target="_blank" data-type="subMenuItem" data-key="Affiliate">
+                                                            <span class="dropdown-menu-item-name" data-link="https://www.e.coohom.com/affiliate-program">
+                                                                Affiliate
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+https://www.e.coohom.com/partnerprogram" target="_blank" data-type="subMenuItem" data-key="">
+                                                            <span class="dropdown-menu-item-name" data-link="https://www.e.coohom.com/partnerprogram">
+                                                                Partner Program
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+https://www.e.coohom.com/indianofficialpartner" target="_blank" data-type="subMenuItem" data-key="indianPartner">
+                                                            <span class="dropdown-menu-item-name" data-link="https://www.e.coohom.com/indianofficialpartner">
+                                                                Indian Partner
+                                                            </span></a>
+                                                </li><li>
+                                                        <a href="
+https://www.e.coohom.com/polishofficialpartner" target="_blank" data-type="subMenuItem" data-key="polandPartner">
+                                                            <span class="dropdown-menu-item-name" data-link="https://www.e.coohom.com/polishofficialpartner">
+                                                                Affiliate
+                                                            </span></a>
+                                                </li></ul>
+                                </div>
+                            </div>
+                        </div></li><li  style="display: none;" >
+                            
+                            <a class="navbar-nav-item " aria-current="page" target="_blank" href="
+https://www.e.coohom.com/tweducation" data-key="twnEducation">
+                                <span>Education</span>
+                                
+                            </a></li></ul>
+        <div class="d-flex">
+            <div id="c-nav-actions">
+                
+<a class="helpcenter-button" href="https://helpcenter.coohom.com" target="_blank" data-key="HelpCenter" rel="noopener noreferrer"></a>
+<div class="lang-select-wrapper dropdown" id="lang-selector">
+    <button class="nav-lang-btn" type="button" id="dropdownLangMenuButton" data-bs-trigger="click" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="lang-name">English</span>
+        <span class="icon-arrow" data-type="icon" data-icon-name="UpOutlined"></span>
+    </button>
+    <div class="lang-dropdown-menu-wrapper dropdown-menu" id="lang-menu" aria-labelledby="dropdownLangMenuButton">
+        <ul class="lang-dropdown-menu-inner">
+                <li class="language-item is-active" data-value="en_US">
+                    <span>English</span>
+                </li>
+                <li class="language-item" data-value="ja_JP">
+                    <span>日本語</span>
+                </li>
+                <li class="language-item" data-value="fr_FR">
+                    <span>Français</span>
+                </li>
+                <li class="language-item" data-value="de_DE">
+                    <span>Deutsch</span>
+                </li>
+                <li class="language-item" data-value="ko_KR">
+                    <span>한국어</span>
+                </li>
+                <li class="language-item" data-value="vi">
+                    <span>Tiếng Việt</span>
+                </li>
+                <li class="language-item" data-value="es_ES">
+                    <span>Español</span>
+                </li>
+                <li class="language-item" data-value="it_IT">
+                    <span>italiano</span>
+                </li>
+                <li class="language-item" data-value="ru_RU">
+                    <span>Русский</span>
+                </li>
+                <li class="language-item" data-value="th_TH">
+                    <span>ภาษาไทย</span>
+                </li>
+                <li class="language-item" data-value="id_ID">
+                    <span>Bahasa Indonesia</span>
+                </li>
+                <li class="language-item" data-value="pl_PL">
+                    <span>Polski</span>
+                </li>
+                <li class="language-item" data-value="ms_MY">
+                    <span>Malay</span>
+                </li>
+                <li class="language-item" data-value="tr_TR">
+                    <span>Türkçe</span>
+                </li>
+                <li class="language-item" data-value="zh_CN">
+                    <span>中文（简体）</span>
+                </li>
+                <li class="language-item" data-value="zh_TW">
+                    <span>中文（繁體）</span>
+                </li></ul>
+    </div>
+</div>
+<a id="loginBtn" class="nav-btn">Login</a>
+                    <a id="signupBtn" class="c-button nav-btn" data-type="button" data-text="Sign Up" href="#">
+                        <span class="c-button_label"></span>
+
+                        
+                        
+                    </a></div>
+        </div>
+    </div>
+</div>
+</nav>
+</section>
+</header>
+    
+<script  src="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros/micros/coohom-market-micros-cmn-c-site-header/entry.761b39e8a2a4680fd166.js?pn=coohom-market-micros-cmn-c-site-header&ps=1486394" ps="1486394" crossorigin="anonymous"></script>
+</micro>
+
+
+
+<main class="home-main notion">
+    <section class="section-banner video-tab-optimized">
+        <div class="section-content">
+            <div class="banner-text home-header-scrollout">
+                <h1 class="silence-heading">Easy Home Design, Rendering & Visualization – All in One Place
+                </h1>
+                <div class="heading-first" data-splitting>Easy Home Design, Rendering & Visualization – All in One Place</div>
+                <h3 class="fadeInLeft">The World’s Leading Home Design Software of 2025 </h3>
+            </div>
+            <div class="buttons-wrapper" id="buttons-wrapper">
+                <a class="a-btn primary" href="/pub/saas/workbench?redirecturl=/kitchen-and-bath-design&ctv=kb" source="workbench">Home Design for Free</a>
+
+</div>
+<img th:style="'background-image: url(' + @{/images/back.png} + '); background-repeat: no-repeat; background-size: cover; 
+					  background-position: center center; background-attachment: fixed; width: 100%; height: 100%; position: absolute;  padding-top: 80vh; z-index:-1'"/>
+					  
+					  
+            <div class="content-wrapper">
+                
+                    <div class="content-item">
+                        <div class="desc">
+                            <h3>Create a 3D home design in 10 minutes, render a stunning visual in just 10 seconds.</h3>
+                        </div>
+                        <div class="media">
+                            
+                            
+                            <video autoplay preload loop controls muted playsinline -webkit-playsinline -x5-playsinline poster="//qhstatic-sg-s3.coohom.com/image/png/1733386515083/3d-design-test-poster.png?x-oss-process=image/resize,/format,webp"><source type="video/webm" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/compressoed.webm"/><source type="video/mp4" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/compressoed.mp4"/>
+        </video>
+                        </div>
+                    </div>
+                
+                    <div class="content-item">
+                        <div class="desc">
+                            <h3>Enjoy Free Photo Studio near you quality photography without leaving home.</h3>
+                        </div>
+                        <div class="media">
+                            
+                            
+                            <video autoplay preload loop controls muted playsinline -webkit-playsinline -x5-playsinline poster="//qhstatic-sg-s3.coohom.com/image/jpg/1716360154214/banner3.jpg?x-oss-process=image/resize,/format,webp"><source type="video/webm" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/photo_studio.webm"/><source type="video/mp4" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/photo_studio.mp4"/>
+        </video>
+                        </div>
+                    </div>
+                
+                    <div class="content-item">
+                        <div class="desc">
+                            <h3>The free AI generation feature provides you with more home design ideas.</h3>
+                        </div>
+                        <div class="media">
+                            
+                            
+                            <video autoplay preload loop controls muted playsinline -webkit-playsinline -x5-playsinline poster="//qhstatic-sg-s3.coohom.com/image/jpg/1716360159540/banner4.jpg?x-oss-process=image/resize,/format,webp"><source type="video/webm" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/ai-step1.webm"/><source type="video/mp4" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/ai-step1.mp4"/>
+        </video>
+                        </div>
+                    </div>
+                
+                    <div class="content-item">
+                        <div class="desc">
+                            <h3>Kitchen, bathroom and closet design, quickly and easily.   </h3>
+                        </div>
+                        <div class="media">
+                            
+                            
+                            <video autoplay preload loop controls muted playsinline -webkit-playsinline -x5-playsinline poster="//qhstatic-sg-s3.coohom.com/image/jpg/1716360186832/banner2.jpg?x-oss-process=image/resize,/format,webp"><source type="video/webm" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/all-in-one-notion-kb.webm"/><source type="video/mp4" src="//coohom-biz-sg-s3.coohom.com/ins/static/homepage/video/all-in-one-notion-kb.mp4"/>
+        </video>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="section-ideas">
+        <div class="section-content">
+            <h2 class="silence-heading">A Wide Range of Home Design Ideas Available!</h2>
+            <div class="section-title" data-splitting>A Wide Range of Home Design Ideas Available!</div>
+            <div class="section-idea-desc" >Free Home Design Templates for Every Space: Bedrooms, Living Rooms, Kitchens, & More!</div>
+            <micro data-pub-type="micro">
+    
+<script>window.__g_cdnHost_c61a624f98b3b3d3d47baecd19b037a7 = "//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-ideas-micro";</script>
+<link  rel="stylesheet" type="text/css" href="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-ideas-micro/micros/coohom-market-micros-cmn-ideas/entry.4bb3a9a4005dff8588e5.css?pn=coohom-market-micros-cmn-ideas&ps=1486658">
+<script type="pub-meta" pt="micro" pn="coohom-market-micros-cmn-ideas" pv="defualttag" ps="1486658"></script>
+
+    <script>
+        
+        
+        
+        window['__PUB_LANG_coohom-market-portal-c-home__'] = {"ideas_micro_list":{"en_US":{"Tr-0a5660":"Use This Template","Tr-5e7041":"View All Home Design Ideas","Tr-eb7a10":"All","idea_kitchen":"Kitchen","idea_living_room":"Living Room","idea_bedroom":"Bedroom","idea_bashroom":"Bathroom","idea_dining_room":"Dining Room","idea_outdoor":"Outdoor","idea_home_office":"Home Office","idea_children_room":"Children's Room","idea_commercial_spaces":"Commercial Spaces","coohom.idea.card.viewMore":"View More ({{count}})","coohom.idea.card.moreDetail":"More details"}}};
+        window['__PUB_LANG_MICRO_IDEAS'] = {"ideas_micro_list":{"en_US":{"Tr-0a5660":"Use This Template","Tr-5e7041":"View All Home Design Ideas","Tr-eb7a10":"All","idea_kitchen":"Kitchen","idea_living_room":"Living Room","idea_bedroom":"Bedroom","idea_bashroom":"Bathroom","idea_dining_room":"Dining Room","idea_outdoor":"Outdoor","idea_home_office":"Home Office","idea_children_room":"Children's Room","idea_commercial_spaces":"Commercial Spaces","coohom.idea.card.viewMore":"View More ({{count}})","coohom.idea.card.moreDetail":"More details"}}};
+        window.ideaData = {"totalCount":193,"count":20,"hasMore":true,"result":[{"obsContentId":"3FO4K4QHN4GC","obsDesignId":"3FO3MIXO40G2","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D187S21ENDP7L7DTIUWFBBELUF3P3X4888_3840x2160.jpg","category":"Kitchen","obsCategoryId":"3FO4K4VYAM4D","username":"jackeyzheng.baby","avatar":"https://lh3.googleusercontent.com/a/AGNmyxbp1NhoN5x3bIdB-XL2Bwlpb1ck1p0k5AHnMhyK=s96-c","title":"Modern Gray Kitchen with Open Layout","description":"This contemporary kitchen features an open layout with large windows letting in natural light. The gray and white color scheme is complemented by black and yellow accents. The kitchen cabinets are in black and white, with a central island in dark marble. The space is completed with modern lighting and a cozy yellow sofa in the adjacent living area.","images":["https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWJU3ULUFX7KUJZA8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D187S21ENDP7L7DTIUWFBBELUF3P3X4888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWJRC4LUFX7KXU5Y8_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/07/08/L3D124S21ENDP7L7EJIUWFSJULUF3P3W2888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWJN2ILUFX7KULNQ8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D124S21ENDP7L7DVQUWFBBELUF3P3XG888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWJU3ULUFX7KUJ2Y8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWJN2ILUFX7KULNY8_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/07/08/L3D124S21ENDP7L7DUIUWFBC6LUF3P3XQ888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWICTYLUFX7KUJPQ8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D124S21ENDP7L7DWIUWFBC6LUF3P3WG888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWLYKYLUFX7KXUPA8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D124S21ENDP7L7EIYUWFBBGLUF3P3X2888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWICTYLUFX7KUJPI8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWJRC4LUFX7KXU5Q8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D187S21ENDP7L7DRYUWFBBELUF3P3WK888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D124S21ENDP7L7D3QUWFBC6LUF3P3XE888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D124S21ENDP7L7EIIUWFSJULUF3P3WM888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/07/08/L3D187S21ENDP7L7D5IUWFBBGLUF3P3X6888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWLYKYLUFX7KXUAY8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/07/09/L1D0S109B0ENDPOKIGSAUWJU3ULUFX7KUJZA8_3840x2160.jpg","https://qhtbdoss.kujiale.com/fpimgnew/prod/imgs/3FO3MIXO40G2/c/img/M5654SQKTIRXOAABAAAAABA8panoguide.png"],"viewCount":35629,"collect":false,"collectCount":49,"pathVariable":"/ideas/kitchen-modern-gray-kitchen-with-open-layout-idtd0-vp~3FO4K4QHN4GC"},{"obsContentId":"3FO4K4RI6Y3C","obsDesignId":"3FO3MNL7HL5F","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWMAUWKN7WLUFX62EMJA8_4000x3000.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"MINAAMAR","avatar":"http://qhstaticssl.kujiale.com/newt/32/image/png/1545120507401/F3C2A4A4758F17DC6C2A35576C9B97F6.png","title":"Modern Minimalist Grey Bedroom Design","description":"This minimalist bedroom features a grey and white color palette with vertical line decorative wall panels. The deep wooden headboard wall contrasts beautifully with the light walls. A grey bedspread, dark curtains, and a variety of throw pillows add comfort and style. An open concept wardrobe with glass doors enhances the modern aesthetic.","images":["https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWGIUWJNZALUFX62CGTY8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWMAUWKN7WLUFX62EMJA8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWMYUWICR6LUFX62DJBY8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWZAUWKN7WLUFX62ECSY8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWIAUWJNZALUFX62CAGA8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWCYUWI5CWLUFX62DDAY8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWAAUWII4QLUFX62F7KQ8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWBIUWKN7WLUFX62EN6I8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWHAUWJNZALUFX62CBJA8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWKYUWKN7WLUFX62EMPA8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZVUQUWII4QLUFX62F6BA8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWHYUWJNZALUFX62CGVI8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWGIUWJNZALUFX62CGTY8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWYAUWKN7WLUFX62EC6Q8_4000x3000.jpg","https://qhtbdoss.kujiale.com/fpimgnew/prod/imgs/3FO3MNL7HL5F/c/img/M6EKDCIKTJH44AABAAAAAEA8panoguide.png","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZVXQUWII4QLUFX62F6OY8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D733S57ENDPJQZWPYUWICR6LUFX62DJNA8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWJIUWII4QLUFX62F6IQ8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWLYUWKN7WLUFX62EMFA8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZVWIUWII4QLUFX62F6KA8_2160x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2025/01/08/L3D728S57ENDPJQZWLAUWJNZALUFX62CAEY8_2160x3840.jpg"],"viewCount":35867,"collect":false,"collectCount":65,"pathVariable":"/ideas/bedroom-modern-minimalist-grey-bedroom-design-idtd0-vp~3FO4K4RI6Y3C"},{"obsContentId":"3FO4K4WFUS8V","obsDesignId":"3FO410LVMVO2","imageUrl":"https://qhrenderpic-cos.kujiale.com/r/2022/10/13/L3D124S57ENDPZMNI7IUWJSLOLUF3P3WE888_4000x3000.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"Just Vee","avatar":"https://cdn.coohom.com/coohom/2022/08/08/MLYK6IAKQUWOAAABAAAAACY8.jpeg","title":"Modern Gray Bedroom with Contemporary Design","description":"This contemporary bedroom features a neutral gray palette, enhancing its serene ambiance. The design focuses on simplicity, comfort, and functionality. Deep curtains contrast with light walls, while a gray carpet adds warmth. Geometric ceiling lights and art on the walls create visual interest. Grey furniture, including a sleek bed and side tables, complements the overall look.","images":["https://qhrenderpic-cos.kujiale.com/r/2022/10/13/L3D124S57ENDPZMNI7IUWJSLOLUF3P3WE888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/10/13/L3D124S57ENDPZMNI7IUWJSLOLUF3P3WE888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/10/09/L3D124S57ENDPZOWOWQUWJUH4LUF3P3XW888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/10/13/L3D137S57ENDPZMN7GYUWJSLOLUF3P3XQ888_3000x4000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/09/30/L3D383S57ENDPYVAXWYUWIEMKLUF3P3WE888_3840x3840.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/09/26/L3D187S57ENDPYXUORIUWJVRYLUF3P3XA888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/09/25/L3D124S57ENDPYXYT2IUWJQ6KLUF3P3X6888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/09/30/L3D124S57ENDPYUSTKYUWIEMKLUF3P3XC888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/09/30/L3D124S57ENDPYUTWMQUWIRMILUF3P3XW888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/09/26/L3D187S57ENDPYXUNZAUWJQ6KLUF3P3XO888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/09/26/L3D187S57ENDPYXUNZAUWJQ6KLUF3P3WM888_3840x2160.jpg"],"viewCount":47517,"collect":false,"collectCount":101,"pathVariable":"/ideas/bedroom-modern-gray-bedroom-with-contemporary-design-idtd0-vp~3FO4K4WFUS8V"},{"obsContentId":"3FO4K4WDM6ED","obsDesignId":"3FO419KNLJ32","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEKZOLUF3P3WU888_7680x4320.jpg","category":"Dining Room","obsCategoryId":"3FO4K4VY9KC2","username":"Sarah Sottile","avatar":"https://qhcmsoss.kujiale.com/texture/2022/10/31/MNPTAFQKQQC4EAABAAAAADA8.png","title":"Modern Minimalist Dining Room with Green Accents","description":"This dining room features a minimalist and transitional design with deep brown walls adorned with simple line decorations. Complementing the warm tones, light green curtains and a potted plant bring vitality. The space is brightened by light wooden floors and illuminated by a pendant light. The dining set in brown and green, paired with clean white and silver cutlery, offers a cozy dining experience.","images":["https://qhrenderpicoss.kujiale.com/ras/2021/01/26/YA_OKKwZR0AAAQAAAAo.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEKZOLUF3P3WU888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGEWLWLUF3P3WS888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/ras/2021/01/26/YA_OKKwZR0AAAQAAAAo.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6FSGEQQ4LUF3P3XU888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/ras/2021/01/26/YA_Ol6wZR0AAAQAAAA0.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEQQ4LUF3P3WY888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGENP4LUF3P3WS888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEQQ4LUF3P3WS888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D326S62ENDPUDIC6NSGEWLWLUF3P3XW888.0_12000x2000.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEKZOLUF3P3WY888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D326S62ENDPUDIC6NSGEEJGLUF3P3WA888.0_12000x2000.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEKZOLUF3P3WW888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGENP4LUF3P3XC888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D326S62ENDPUDIC6FSGEKZOLUF3P3XU888.0_12000x2000.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGEEJGLUF3P3XQ888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEQQ4LUF3P3WO888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGENP4LUF3P3XK888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGEEJGLUF3P3X6888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D326S62ENDPUDIC6NSGEWLWLUF3P3X2888.0_12000x2000.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D326S62ENDPUDIC6VSGEKZOLUF3P3WI888.0_12000x2000.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGEWLWLUF3P3XC888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/01/29/L3D206S21ENDPUGPNLNSGENPOLUF3P3WC888_2560x1440.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEKZOLUF3P3WG888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6NSGEEJGLUF3P3WU888_7680x4320.jpg","https://qhrenderpicoss.kujiale.com/r/2021/02/03/L3D336S62ENDPUDIC6VSGEQQ4LUF3P3WW888_7680x4320.jpg"],"viewCount":28400,"collect":false,"collectCount":85,"pathVariable":"/ideas/dining-room-modern-minimalist-dining-room-with-green-accents-idtd0-vp~3FO4K4WDM6ED"},{"obsContentId":"3FO4K4WFN93M","obsDesignId":"3FO413MQ43FM","imageUrl":"https://qhrenderpicoss.kujiale.com/ras/2020/12/16/X9n35qwZEe4AAQAAAAE.jpg","category":"Living Room","obsCategoryId":"3FO4K4VYAPGE","username":"Sarah Sottile","avatar":"https://qhcmsoss.kujiale.com/texture/2022/10/31/MNPTAFQKQQC4EAABAAAAADA8.png","title":"Modern Gray & Orange Living Room Decor","description":"This contemporary living room features a gray and orange color scheme. Deep gray curtains, sofa, and carpet pair with orange accent pillows and a decorative wall panel for a vibrant look. Light wooden floors and a circular ceiling light add warmth and modernity. Wooden partitions create space division without losing openness.","images":["https://qhrenderpicoss.kujiale.com/ras/2020/12/16/X9n35qwZEe4AAQAAAAE.jpg","https://qhrenderpicoss.kujiale.com/ras/2020/12/16/X9n35qwZEe4AAQAAAAE.jpg","https://qhrenderpicoss.kujiale.com/ras/2020/12/16/X9n05qwZEe4AAQAAAAA.jpg","https://qhrenderpicoss.kujiale.com/ras/2020/12/16/X9n3dawZEe4AAQAAAAY.jpg","https://qhrenderpicoss.kujiale.com/ras/2020/12/16/X9n2_awZEe4AAQAAAAk.jpg","https://qhrenderpicoss.kujiale.com/ras/2020/12/16/X9n1X6wZEe4AAQAAAAQ.jpg","https://qhrenderpicoss.kujiale.com/r/2020/12/16/L3D206S55ENDILDF2PVSGFISYLUF3P3WW888_2560x1440.jpg","https://qhrenderpicoss.kujiale.com/r/2021/01/30/L3D336S62ENDPUF4WQNSGEE34LUF3P3WY888_7680x4320.jpg"],"viewCount":27198,"collect":false,"collectCount":56,"pathVariable":"/ideas/living-room-modern-gray-orange-living-room-decor-idtd0-vp~3FO4K4WFN93M"},{"obsContentId":"3FO4K4W8COR7","obsDesignId":"3FO40A0NERO6","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D553S14ENDPZSYGRIUWIQTQLUF3P3WS888_1024x768.jpg","category":"Living Room","obsCategoryId":"3FO4K4VYAPGE","username":"Viktorija Zavjalova ","avatar":"https://qhcmsoss.kujiale.com/texture/2022/12/11/MOLDLYYKQUBRCAABAAAAACA8.jpg","title":"Minimalist White Living Room with Nature Touches","description":"This modern minimalist living room features a white and light wood color scheme, creating a bright and airy space. The abstract artwork and woven pendant lights add artistic and natural elements. Large windows let in plenty of natural light, enhancing the openness. Soft grey sofa with green throw pillows and a geometric rug complement the decor. Green plants in corners bring life and vitality to the room.","images":["https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D124S14ENDPZSXC5YUWIQTQLUF3P3UI888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D553S14ENDPZSYGRIUWIQTQLUF3P3WS888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/19/L3D553S14ENDPZUE5CYUWIQTQLUF3P3UK888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/18/L3D553S14ENDPZUHLDAUWIWKILUF3P3XY888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/18/L3D553S14ENDPZUXCOQUWIRE6LUF3P3XW888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/18/L3D553S14ENDPZUGGQIUWIFUKLUF3P3XQ888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/19/L3D552S14ENDPZUE5DQUWIWKILUF3P3XO888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/18/L3D552S14ENDPZUXCOQUWIRE6LUF3P3UI888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/19/L3D553S14ENDPZTUD7QUWIQTQLUF3P3W4888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/19/L3D553S14ENDPZTUDYIUWIQTQLUF3P3X6888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/19/L3D553S14ENDPZUE5DQUWIWKILUF3P3W6888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D124S14ENDPZSXC5YUWIQTQLUF3P3UI888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D552S14ENDPZSYWFAUWIRE6LUF3P3XY888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D124S14ENDPZSXA6IUWLKPWLUF3P3XM888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/21/L3D197S14ENDPZSVRVQUWIWKILUF3P3XW888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/18/L3D553S14ENDPZUHL6YUWIRE6LUF3P3WO888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/21/L3D553S14ENDPZSXAMQUWIRE6LUF3P3XA888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/18/L3D553S14ENDPZUHS4QUWIWKILUF3P3WS888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D553S14ENDPZSZZOAUWIQTQLUF3P3W2888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D552S14ENDPZSZZOAUWIQTQLUF3P3XK888_1024x576.jpg","https://design-community-us-s3.coohom.com/design/img/perm/L1D0S132B0ENDP2OE2BIUWJSBULUF3P3WI888_automatic.png","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D552S14ENDPZSYGSYUWIFUKLUF3P3WM888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D124S14ENDPZSXDWYUWIQTQLUF3P3WA888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D552S14ENDPZSYVLIUWIFUKLUF3P3UK888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/21/L3D553S14ENDPZSYGRIUWIQTQLUF3P3XK888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D553S14ENDPZSZZOAUWIQTQLUF3P3X4888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D124S14ENDPZSWPUYUWIRE6LUF3P3X6888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/11/21/L3D124S14ENDPZSVWTIUWIRE6LUF3P3XM888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/11/21/L3D553S14ENDPZSYGZIUWIRE6LUF3P3X6888_1024x768.jpg"],"viewCount":19311,"collect":false,"collectCount":38,"pathVariable":"/ideas/living-room-minimalist-white-living-room-with-nature-touches-idtd0-vp~3FO4K4W8COR7"},{"obsContentId":"3FO4K4UFBMNF","obsDesignId":"3FO3YQGF4HUF","imageUrl":"https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D556S14ENDP2WUXTQUWJUI2LUF3P3XW888_768x768.jpg","category":"Bathroom","obsCategoryId":"3FO4K4VY9XP6","username":"Adon","avatar":"https://qhcmsoss.kujiale.com/texture/2023/10/26/MU5A3HQKQQ7WGAABAAAAABY8.jpg","title":"Modern Minimalist Bathroom with Natural Light","description":"This modern minimalist bathroom features a bright and open design with large windows showcasing a green view. The white and light-colored decor is complemented by sleek black fixtures, including a standalone tub and faucet. A gray stone countertop and dark wood ceiling details add contrast and warmth.","images":["https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D556S14ENDP2WUXTQUWJUI2LUF3P3XW888_768x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D556S14ENDP2WUXTQUWJUI2LUF3P3XW888_768x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2WUVRIUWI77ALUF3P3WG888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2WUQAQUWIW7SLUF3P3WQ888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2WV25YUWIW7SLUF3P3WM888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2WVLZYUWIW7SLUF3P3XY888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D552S14ENDP2WWPDIUWI77ALUF3P3WI888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2WURHQUWJUI2LUF3P3X6888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D383S14ENDP2WU53IUWI77ALUF3P3XC888_3840x3840.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D556S14ENDP2WU2ZQUWJUI2LUF3P3X6888_768x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2WVGTIUWL32QLUF3P3XM888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D383S14ENDP2WUYQQUWJTC6LUF3P3XC888_3840x3840.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D556S14ENDP2WU4CYUWL32QLUF3P3X2888_768x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D556S14ENDP2WU3WIUWL32QLUF3P3WI888_768x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2WVJMQUWJTC6LUF3P3X4888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2WVNRIUWJTC6LUF3P3XG888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2WUVJAUWL32QLUF3P3XY888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D556S14ENDP2WUWWAUWJUI2LUF3P3XQ888_768x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D552S14ENDP2WVSLIUWJUI2LUF3P3WY888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2WUVSAUWL32QLUF3P3W6888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D552S14ENDP2WW3GAUWJUI2LUF3P3XY888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D383S14ENDP2WUYGIUWJUI2LUF3P3X4888_3840x3840.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2WVYOIUWJUI2LUF3P3XG888_1024x768.jpg"],"viewCount":14617,"collect":false,"collectCount":29,"pathVariable":"/ideas/bathroom-modern-minimalist-bathroom-with-natural-light-idtd0-vp~3FO4K4UFBMNF"},{"obsContentId":"3FO4K4UFWGKN","obsDesignId":"3FO4044DWBQU","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D187S14ENDP3D5MSYUWLYFALUF3P3XW888_3840x2160.jpg","category":"Children's Room","obsCategoryId":"3FO4K4VY9NO3","username":"mori4.coohom","avatar":"https://cdn.coohom.com/coohom/2024/02/09/MXC6RWYKQQ4ZCAABAAAAAEI8.jpeg","title":"Superhero Kids Room with Blue & Gray Decor","description":"This kids' room features a superhero theme with a comic-style mural of Captain America on the wall. The room is adorned with striped bedding, colorful pillows, and a geometric rug. Deep blue curtains add depth, while a green and gray headboard complements the modern decor. Toys, books, and a Batman doll enhance the playful atmosphere.","images":["https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5PGQUWJN4YLUF3P3XW888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D187S14ENDP3D5MSYUWLYFALUF3P3XW888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/30/L3D186S14ENDP3EEQBYUWJN4YLUF3P3XU888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5DTIUWIZ2ALUF3P3W6888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/17/L3D186S14ENDP3MXYOYUWLYFALUF3P3X2888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/17/L3D187S14ENDP3MX3RAUWIZ2ALUF3P3WU888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/30/L3D186S14ENDP3EEQYYUWIEVSLUF3P3WW888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D202S14ENDP3D5ELYUWLYFALUF3P3W4888_1200x1600.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5LRQUWLYFALUF3P3XO888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5CXIUWJN4YLUF3P3XC888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5PGQUWJN4YLUF3P3XW888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5P3IUWLYFALUF3P3XQ888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/30/L3D186S14ENDP3EEROIUWJN4YLUF3P3XO888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/17/L3D187S14ENDP3MX3VAUWLYFALUF3P3X4888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/17/L3D552S14ENDP3MX3ZYUWIEVSLUF3P3WK888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/16/L3D186S14ENDP3NLHCYUWI3PYLUF3P3WY888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/17/L3D552S14ENDP3MXYDYUWIZ2ALUF3P3W4888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5GGAUWJN4YLUF3P3XO888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5JAIUWJN4YLUF3P3W4888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/30/L3D186S14ENDP3EFEWYUWIEVSLUF3P3XE888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5LTYUWI3PYLUF3P3X2888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D187S14ENDP3D5PCIUWIEVSLUF3P3X6888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/30/L3D186S14ENDP3EEQPQUWIZ2ALUF3P3W6888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/30/L3D186S14ENDP3EERGQUWIZ2ALUF3P3WS888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5M7YUWIZ2ALUF3P3WA888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/30/L3D186S14ENDP3EFPZIUWLYFALUF3P3WI888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/16/L3D186S14ENDP3NMIIAUWIZ2ALUF3P3WE888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5Z7IUWIZ2ALUF3P3XS888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5ELYUWLYFALUF3P3X4888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5CXIUWJN4YLUF3P3X6888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/31/L3D187S14ENDP3D5PCIUWIEVSLUF3P3WO888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/30/L3D186S14ENDP3EER6QUWLYFALUF3P3W4888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5J5QUWIZ2ALUF3P3XG888_1920x1080.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/30/L3D552S14ENDP3EFP6QUWJN4YLUF3P3X2888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/30/L3D186S14ENDP3EERFAUWIEVSLUF3P3W4888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/30/L3D186S14ENDP3EER2AUWIZ2ALUF3P3W4888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D186S14ENDP3D5HNQUWJN4YLUF3P3WO888_1920x1080.jpg"],"viewCount":10232,"collect":false,"collectCount":34,"pathVariable":"/ideas/children%27s-room-superhero-kids-room-with-blue-gray-decor-idtd0-vp~3FO4K4UFWGKN"},{"obsContentId":"3FO4K4UHB3I7","obsDesignId":"3FO405YUIWYF","imageUrl":"https://qhrenderpic-cos.kujiale.com/r/2023/02/06/L3D121S14ENDP37SCXYUWIH5ELUF3P3XA888_1600x1200.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"Djulian","avatar":"https://qhcmsoss.kujiale.com/texture/2023/07/29/MTCQTUIKQQRXWAABAAAAADI8.jpg","title":"Modern Minimalist Grey Bedroom Design","description":"This contemporary bedroom features a minimalist design with a focus on practicality and comfort. The walls are painted in a light gray, complemented by deep gray curtains and varying shades of gray beddings. Black and white geometric patterned sheets add modernity. The room is adorned with natural-themed decor and mirrors, reflecting a blend of nature and modernity. Light wooden floors and ceiling lights contribute to a bright, harmonious space.","images":["https://qhrenderpic-cos.kujiale.com/r/2023/02/06/L3D121S14ENDP37SCEIUWJ4OALUF3P3WG888_1600x1200.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/02/06/L3D121S14ENDP37SCXYUWIH5ELUF3P3XA888_1600x1200.jpg","https://qhrenderpicoss.kujiale.com/r/2023/02/06/L3D121S14ENDP37SDZYUWIEKELUF3P3XK888_1600x1200.jpg","https://qhrenderpicoss.kujiale.com/r/2023/02/06/L3D121S14ENDP37SJLQUWIZ5QLUF3P3XE888_1600x1200.jpg","https://qhrenderpicoss.kujiale.com/r/2023/02/06/L3D121S14ENDP37SCIAUWIEKELUF3P3WE888_1600x1200.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/02/06/L3D121S14ENDP37SCEIUWJ4OALUF3P3WG888_1600x1200.jpg"],"viewCount":10467,"collect":false,"collectCount":10,"pathVariable":"/ideas/bedroom-modern-minimalist-grey-bedroom-design-idtd0-vp~3FO4K4UHB3I7"},{"obsContentId":"3FO4K4UAG7JG","obsDesignId":"3FO3Y6614DHQ","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD7YAUI5NYALUF3P3W6888_3840x2160.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"Woodlark Studio","avatar":"//cf.coohom.com/common/2020/07/21/L4LK2SVMCMCYQAAJAY888888.png","title":"Modern Minimalist Bedroom with Gray and Green Tones","description":"This modern minimalist bedroom features a deep green striped wallpaper accent wall, paired with white walls and light wooden floors for a balanced look. Gray and white bedding adds simplicity, while light carpet and curtains offer warmth. The design focuses on functionality and comfort, creating a serene space ideal for rest and rejuvenation.","images":["https://qhrenderpicoss.kujiale.com/r/2020/10/17/L3D187S14ENDIKKVELYUI5L7GLUF3P3X4888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD7YAUI5NYALUF3P3W6888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD72YUI5NYALUF3P3XO888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/21/L3D202S14ENDIKIBOKYUI5NYALUF3P3WS888_1200x1600.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/22/L3D124S14ENDIKHQITYUI5NYALUF3P3XE888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD7HYUI5NYALUF3P3XW888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD7FIUI5NYALUF3P3XA888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/17/L3D187S14ENDIKKVDZQUI5L7GLUF3P3UK888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD7HAUI5NYALUF3P3WK888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD7NQUI5NYALUF3P3WA888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/18/L3D187S14ENDIKKD5IAUI5L7GLUF3P3WM888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/18/L3D187S14ENDIKKD4ZQUI5L7GLUF3P3WQ888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D187S14ENDIKMD7AAUI5NYALUF3P3XI888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/14/L3D222S14ENDIKMO2GYUI5NYALUF3P3WE888.0_6000x1000.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/14/L3D222S14ENDIKMO2UQUI5NYALUF3P3XS888.0_6000x1000.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/18/L3D187S14ENDIKKD5SIUI5L7GLUF3P3XK888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/18/L3D187S14ENDIKKDBVQUI5L7GLUF3P3W4888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/15/L3D137S14ENDIKMD6TQUI5NYALUF3P3X2888_3000x4000.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/18/L3D137S14ENDIKKCNGYUI5L7GLUF3P3WQ888_3000x4000.jpg","https://qhrenderpicoss.kujiale.com/r/2020/10/18/L3D137S14ENDIKKE7AIUI5L7GLUF3P3WQ888_3000x4000.jpg"],"viewCount":72523,"collect":false,"collectCount":46,"pathVariable":"/ideas/bedroom-modern-minimalist-bedroom-with-gray-and-green-tones-idtd0-vp~3FO4K4UAG7JG"},{"obsContentId":"3FO4K4UAAK9R","obsDesignId":"3FO3Y6TD83VT","imageUrl":"https://qhrenderstorage-oss.kujiale.com/beautify/2023/02/23/MP3TN4IKQUAR6AABAAAAABA8.jpg","category":"Living Room","obsCategoryId":"3FO4K4VYAPGE","username":"natiaarchvadze470","avatar":"http://qhstaticssl.kujiale.com/newt/32/image/png/1545120507401/F3C2A4A4758F17DC6C2A35576C9B97F6.png","title":"Minimalist Living Room with Gray Tone","description":"This contemporary living room features a minimalist design with white and gray tones, creating a clean and bright atmosphere. The gray cloth sofa matches with pillows, while the large windows let in plenty of natural light. The wall-mounted TV and modern fireplace add both functionality and aesthetics. Unique pendant and floor lamps provide artistic and functional lighting.","images":["https://qhrenderstorage-oss.kujiale.com/beautify/2023/02/23/MP3TN4IKQUAR6AABAAAAABA8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/02/23/MP3TN4IKQUAR6AABAAAAABA8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/02/23/MP3TN4IKQUAR6AABAAAAADA8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/02/23/MP3SF3YKQURUIAABAAAAADY8.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/02/23/L3D552S14ENDP3UM2MIUWIOJALUF3P3X2888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/02/23/L3D552S14ENDP3UM3CQUWLYFSLUF3P3W2888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/02/23/L3D552S14ENDP3UM3MQUWIOJALUF3P3WM888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/02/23/L3D552S14ENDP3UM32IUWIANILUF3P3X2888_1024x576.jpg"],"viewCount":10117,"collect":false,"collectCount":33,"pathVariable":"/ideas/living-room-minimalist-living-room-with-gray-tone-idtd0-vp~3FO4K4UAAK9R"},{"obsContentId":"3FO4K4VDYU6S","obsDesignId":"3FO3TF90DGF0","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2023/03/19/L3D187S14ENDPEFAV4YUWIF5ALUF3P3X2888_3840x2160.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"tavarespatricia870","avatar":"http://qhstaticssl.kujiale.com/newt/32/image/png/1545120507401/F3C2A4A4758F17DC6C2A35576C9B97F6.png","title":"Minimalist Grey Bedroom Design Ideas","description":"This modern minimalist bedroom features neutral tones with gray walls, cream and white beddings, and light wooden floors. The open closet design adds functionality, while white curtains and a striped carpet enhance the cozy atmosphere. The design emphasizes simplicity, comfort, and practicality.","images":["https://qhrenderpicoss.kujiale.com/r/2023/03/19/L3D187S14ENDPEFAV4YUWIF5ALUF3P3X2888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/03/19/L3D187S14ENDPEFAV4YUWIF5ALUF3P3X2888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/03/19/L3D124S14ENDPEFAYDIUWJQIMLUF3P3X4888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/03/19/L3D124S14ENDPEFAGQAUWL7MILUF3P3XA888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/03/19/L3D187S14ENDPEFAYBQUWIYEILUF3P3WK888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/03/19/L3D187S14ENDPEFAXTQUWJQIMLUF3P3WC888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/03/19/L3D124S14ENDPEFAYAQUWL7MILUF3P3XY888_4000x3000.jpg"],"viewCount":10471,"collect":false,"collectCount":52,"pathVariable":"/ideas/bedroom-minimalist-grey-bedroom-design-ideas-idtd0-vp~3FO4K4VDYU6S"},{"obsContentId":"3FO4K4YIU6DT","obsDesignId":"3FO3SS3VT1P2","imageUrl":"https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2BQQKQU4VGAABAAAAACY8.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"A.M Architecture","avatar":"https://qhcmsoss.kujiale.com/texture/2023/08/10/MTKUIJAKQUGPQAABAAAAAAY8.jpg","title":"Modern Gray Master Bedroom Design Ideas","description":"This contemporary bedroom features a neutral color palette with gray and black & white accents. The design focuses on simplicity, functionality, and comfort. The room boasts a white leather headboard, varied throw pillows, a geometric patterned carpet, and an open-concept wardrobe with black metal frames and glass doors. The light wooden floor and embedded lighting contribute to a bright and cozy atmosphere.","images":["https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2BQQKQU4VGAABAAAAACY8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2BQQKQU4VGAABAAAAACY8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2XLAKQU4VGAABAAAAABI8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2RMQKQU4VGAABAAAAAEA8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2TQQKQUKXWAABAAAAACY8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2WSQKQUKXWAABAAAAACQ8.jpg","https://qhrenderstorage-oss.kujiale.com/beautify/2023/05/25/MRX2WSQKQUKXWAABAAAAAEA8.jpg"],"viewCount":12581,"collect":false,"collectCount":43,"pathVariable":"/ideas/bedroom-modern-gray-master-bedroom-design-ideas-idtd0-vp~3FO4K4YIU6DT"},{"obsContentId":"3FO4K4UG9L8A","obsDesignId":"3FO4048CPKWT","imageUrl":"https://qhrenderpic-cos.kujiale.com/r/2023/02/01/L3D124S14ENDP3C6WTIUWLYFALUF3P3XE888_4000x3000.jpg","category":"Dining Room","obsCategoryId":"3FO4K4VY9KC2","username":"Adon","avatar":"https://qhcmsoss.kujiale.com/texture/2023/10/26/MU5A3HQKQQ7WGAABAAAAABY8.jpg","title":"Modern Transitional Dining Room with Wood Tones","description":"This modern transitional dining room features an open kitchen and dining area with a focus on simplicity, nature, and comfort. Wooden elements and neutral tones create a warm and serene atmosphere. Gray and wooden walls, a white spotted floor, and minimalistic furniture contribute to a clean, bright look. The dining table is adorned with simple decor like dry flowers and pinecones.","images":["https://qhrenderpicoss.kujiale.com/r/2023/02/01/L3D383S14ENDP3C6XCAUWIZ2ALUF3P3XW888_3840x3840.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/02/01/L3D124S14ENDP3C6WTIUWLYFALUF3P3XE888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/31/L3D187S14ENDP3DQGMQUWIEVSLUF3P3WK888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/02/01/L3D124S14ENDP3C6W6YUWIEVSLUF3P3XC888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/02/01/L3D383S14ENDP3C6XCAUWIZ2ALUF3P3XW888_3840x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2023/02/01/L3D383S14ENDP3DAZQQUWLYFALUF3P3WM888_3840x3840.jpg"],"viewCount":11914,"collect":false,"collectCount":15,"pathVariable":"/ideas/dining-room-modern-transitional-dining-room-with-wood-tones-idtd0-vp~3FO4K4UG9L8A"},{"obsContentId":"3FO4K4V2M24T","obsDesignId":"3FO3TC342D17","imageUrl":"https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D553S14ENDPFOQRQIUWJSQWLUF3P3XK888_1024x768.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"priyankapujari21591","avatar":"http://qhstaticssl.kujiale.com/newt/32/image/png/1545120507401/F3C2A4A4758F17DC6C2A35576C9B97F6.png","title":"Modern Minimalist Bedroom Design Ideas","description":"This modern bedroom features a minimalist design with neutral tones, a geometric wallpaper headboard, and a black and white carpet. The room is functional and comfortable, with hidden curtains, a fan light, and coordinating bedding and throw pillows. The design aims for simplicity and relaxation, making it an ideal space to unwind.","images":["https://qhrenderpic-cos.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGKIYUWJSQWLUF3P3WA888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D553S14ENDPFOQRQIUWJSQWLUF3P3XK888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D553S14ENDPFOQR5IUWL3FKLUF3P3XY888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGKLQUWJSQWLUF3P3WG888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D553S14ENDPFORPWYUWIIEULUF3P3X2888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGKKQUWIEH6LUF3P3WG888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D124S14ENDPFOQUOIUWLZLELUF3P3W4888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D553S14ENDPFMGRUIUWL3FKLUF3P3WM888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D553S14ENDPFMGRVIUWIIEULUF3P3WA888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D124S14ENDPFOQUPQUWIEH6LUF3P3XG888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGK7YUWJSQWLUF3P3W2888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D553S14ENDPFORPDAUWIIEULUF3P3WY888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGK4AUWIEH6LUF3P3XW888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGKAAUWJCEULUF3P3WS888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D553S14ENDPFMGRSAUWLZLELUF3P3XM888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGKJAUWJBUILUF3P3X2888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D553S14ENDPFMGECYUWLZLELUF3P3XE888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D124S14ENDPFOQUPQUWIEH6LUF3P3XK888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D553S14ENDPFMGRQIUWIEH6LUF3P3XQ888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGKIYUWJSQWLUF3P3WA888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D553S14ENDPFOQRUYUWLZLELUF3P3W2888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D124S14ENDPFOQUPQUWIEH6LUF3P3XC888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D124S14ENDPFMGKMQUWJBUILUF3P3UI888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/25/L3D553S14ENDPFMSY4YUWLZLELUF3P3XQ888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D553S14ENDPFOQR5IUWL3FKLUF3P3XW888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D187S14ENDPFOQTRAUWLZLELUF3P3XW888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D553S14ENDPFP2CMQUWJQJ4LUF3P3WY888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D187S14ENDPFP2FSIUWLZ7ILUF3P3XI888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2CAAUWLZ7ILUF3P3WG888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D124S14ENDPFOQTRAUWLZLELUF3P3X6888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D124S14ENDPFP2FSIUWLZ7ILUF3P3WS888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/21/L3D553S14ENDPFO47AIUWIEH6LUF3P3WI888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/21/L3D553S14ENDPFO4AMYUWLZLELUF3P3XQ888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D187S14ENDPFP2FTQUWII2SLUF3P3XI888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2WIYUWIWQSLUF3P3W6888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D552S14ENDPFP23PIUWLZ7ILUF3P3X2888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2YKQUWJQJ4LUF3P3XC888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D186S14ENDPFP2AZYUWJQJ4LUF3P3XG888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D552S14ENDPFP27WYUWLZ7ILUF3P3XW888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D187S14ENDPFOQTYQUWL3FKLUF3P3XU888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2CKQUWII2SLUF3P3XC888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/21/L3D552S14ENDPFO4APQUWLZLELUF3P3XQ888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D553S14ENDPFORO2IUWLZLELUF3P3W2888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/21/L3D554S14ENDPFO4QAAUWJSQWLUF3P3XE888_768x1024.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D552S14ENDPFP23YAUWII2SLUF3P3WW888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D137S14ENDPFOQUBAUWL3FKLUF3P3WO888_3000x4000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D137S14ENDPFOQUOIUWLZLELUF3P3WK888_3000x4000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D124S14ENDPFP2GLAUWIWQSLUF3P3W2888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/21/L3D553S14ENDPFO4AOYUWIEH6LUF3P3XW888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D186S14ENDPFOQT6YUWIIEULUF3P3XA888_1920x1080.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/22/L3D124S14ENDPFOQUOIUWLZLELUF3P3W2888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/21/L3D553S14ENDPFO4AAAUWIIEULUF3P3W6888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2CLAUWIWQSLUF3P3XM888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2E2YUWIQUQLUF3P3XY888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D124S14ENDPFP2FQYUWJQJ4LUF3P3W2888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/20/L3D553S14ENDPFP2CKAUWIQUQLUF3P3WY888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/21/L3D552S14ENDPFO4AMIUWKLUYLUF3P3XI888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D553S14ENDPFP2CLAUWIWQSLUF3P3X4888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2YDIUWIWQSLUF3P3XK888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/20/L3D187S14ENDPFP2FRIUWIQUQLUF3P3WU888_3840x2160.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/25/L3D552S14ENDPFMGEJAUWJCEULUF3P3WO888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/04/20/L3D552S14ENDPFP2WIAUWJQJ4LUF3P3W6888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/21/L3D552S14ENDPFO47BAUWIIEULUF3P3W4888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/04/22/L3D124S14ENDPFOQUPQUWIEH6LUF3P3WE888_4000x3000.jpg"],"viewCount":14824,"collect":false,"collectCount":67,"pathVariable":"/ideas/bedroom-modern-minimalist-bedroom-design-ideas-idtd0-vp~3FO4K4V2M24T"},{"obsContentId":"3FO4K4UN1IJ5","obsDesignId":"3FO3YVNSCY67","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D124S14ENDP2W276YUWL32QLUF3P3XM888_4000x3000.jpg","category":"Living Room","obsCategoryId":"3FO4K4VYAPGE","username":"Adon","avatar":"https://qhcmsoss.kujiale.com/texture/2023/10/26/MU5A3HQKQQ7WGAABAAAAABY8.jpg","title":"Contemporary Gray Living Room with Minimalist Decor","description":"This contemporary living room features gray concrete walls and floors, paired with a white sofa and colorful cushions. A yellow bicycle adds a pop of color. A round wooden coffee table holds books and a lamp, enhancing the minimalist and functional design. The ceiling is kept simple, creating an open and bright atmosphere.","images":["https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D124S14ENDP2W276YUWL32QLUF3P3XM888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D124S14ENDP2W276YUWL32QLUF3P3XM888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/31/L3D552S14ENDP2YBG3AUWIW7SLUF3P3W6888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/17/L3D552S14ENDP2BFWOIUWIURSLUF3P3XA888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/29/L3D552S14ENDP2ZO5JAUWJTC6LUF3P3X4888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/29/L3D187S14ENDP2ZODPYUWJUI2LUF3P3XO888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/29/L3D552S14ENDP2ZORTAUWJUI2LUF3P3UK888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/29/L3D552S14ENDP2ZOWWQUWL32QLUF3P3XG888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/17/L3D552S14ENDP2BFWMIUWIVY6LUF3P3WU888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2W2CKIUWIW7SLUF3P3WE888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/31/L3D552S14ENDP2YDFFQUWJUI2LUF3P3W6888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/31/L3D552S14ENDP2YEMUQUWI77ALUF3P3X2888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2W2A3YUWIW7SLUF3P3XU888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/31/L3D552S14ENDP2YECQQUWIW7SLUF3P3WG888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2W2B3AUWI77ALUF3P3XM888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/28/L3D552S14ENDP22A3XIUWJUI2LUF3P3XC888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/17/L3D552S14ENDP2BFUFQUWIURSLUF3P3WI888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/31/L3D552S14ENDP2YEBAAUWL32QLUF3P3X6888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2W23WYUWIW7SLUF3P3XI888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D553S14ENDP2W2WKAUWJTC6LUF3P3XC888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/31/L3D552S14ENDP2YELRYUWIW7SLUF3P3XU888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D124S14ENDP2W2EPAUWIW7SLUF3P3X6888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D552S14ENDP2W3GOAUWL32QLUF3P3XM888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/31/L3D552S14ENDP2YEXFYUWIW7SLUF3P3XG888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D124S14ENDP2W2EEQUWI77ALUF3P3XU888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D552S14ENDP2W3KAQUWL32QLUF3P3WC888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/28/L3D552S14ENDP2Z6FAIUWJUI2LUF3P3X2888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D124S14ENDP2W2E7YUWIW7SLUF3P3WA888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/02/L3D124S14ENDP2W2FHQUWL32QLUF3P3XG888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/17/L3D187S14ENDP2BFWWAUWIURSLUF3P3X2888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/28/L3D552S14ENDP22A2TIUWI77ALUF3P3UK888_1024x576.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/31/L3D552S14ENDP2YCIZAUWI77ALUF3P3WY888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D553S14ENDP2W252AUWIW7SLUF3P3X6888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2023/01/02/L3D124S14ENDP2W2APAUWI77ALUF3P3XS888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22TIAAUWIW7SLUF3P3WW888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/26/L3D124S14ENDP23I6SAUWJUI2LUF3P3W4888_4000x3000.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/27/L3D124S14ENDP22VIOAUWJUI2LUF3P3WS888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22TMBQUWIW7SLUF3P3WU888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2023/01/05/L3D552S14ENDP2U23RQUWJTC6LUF3P3WQ888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D124S14ENDP22SYVYUWL32QLUF3P3WO888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22UVYAUWJUI2LUF3P3XA888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D124S14ENDP22TJNQUWJUI2LUF3P3WM888_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22TIBQUWJTC6LUF3P3WO888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22TCYQUWJTC6LUF3P3X4888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/27/L3D553S14ENDP22RYTAUWI77ALUF3P3WU888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/26/L3D552S14ENDP23IXDIUWJTC6LUF3P3XW888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22RZLAUWIW7SLUF3P3XK888_1024x768.jpg","https://qhrenderpic-cos.kujiale.com/r/2022/12/27/L3D553S14ENDP22SCMYUWL32QLUF3P3WO888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22TCCYUWJUI2LUF3P3XO888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22R2UYUWL32QLUF3P3XG888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22TEIQUWJUI2LUF3P3W2888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22T6EIUWJTC6LUF3P3W4888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/26/L3D187S14ENDP23IY6AUWIW7SLUF3P3X2888_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/26/L3D552S14ENDP23ISTIUWI77ALUF3P3X6888_1024x576.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22R2WAUWJTC6LUF3P3XW888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D553S14ENDP22RHYQUWJTC6LUF3P3XO888_1024x768.jpg","https://qhrenderpicoss.kujiale.com/r/2022/12/27/L3D124S14ENDP22TDQAUWI77ALUF3P3X2888_4000x3000.jpg"],"viewCount":31294,"collect":false,"collectCount":115,"pathVariable":"/ideas/living-room-contemporary-gray-living-room-with-minimalist-decor-idtd0-vp~3FO4K4UN1IJ5"},{"obsContentId":"3FO4K4XRGQFN","obsDesignId":"3FO3JANF5NYY","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2024/05/08/L3D582S41ENDPMSKD4AUWIMP2LUFX6WLAQY8_3840x2160.jpg","category":"Bedroom","obsCategoryId":"3FO4K4VYBXWR","username":"yixirightthere","avatar":"https://lh3.googleusercontent.com/a/ACg8ocIlJiRWhF2rpLFrbYVPU0qeM8jxw4qTgvsVoWYhVUZc=s96-c","title":"Elegant Art Deco Bedroom with Gray Tone","description":"This modern bedroom features an elegant Art Deco design with gray and white tones. The wooden-textured headboard wall adds warmth, while deep gray curtains ensure privacy. The bed is dressed in gray and white linens, complemented by a striped carpet. Ceiling lights and a sleek吊灯 enhance the room's sophistication, creating a comfortable and luxurious atmosphere.","images":["https://qhrenderpicoss.kujiale.com/r/2024/05/08/L3D582S41ENDPMSKD4AUWIMP2LUFX6WLAQY8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/08/L3D582S41ENDPMSKD4AUWIMP2LUFX6WLAQY8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/09/L1D0S109B0ENDPMSKHKAUWISUWLUFX47PJGI8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/09/L1D0S109B0ENDPMSKHKAUWIUC4LUFX47POSY8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/08/L3D582S41ENDPMSKD5IUWIYSCLUFX6WF5TI8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/08/L3D582S41ENDPMSKDVAUWIMP2LUFX6WLGRI8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/09/L1D0S109B0ENDPMSKHKAUWLYIKLUFX47PJCI8_3840x2160.jpg"],"viewCount":9146,"collect":false,"collectCount":33,"pathVariable":"/ideas/bedroom-elegant-art-deco-bedroom-with-gray-tone-idtd0-vp~3FO4K4XRGQFN"},{"obsContentId":"3FO4K4XRC2L9","obsDesignId":"3FO3JANFNWMF","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2024/05/16/L1D0S109B0ENDPNNVIDQUWIUC4LUFX7QVLAA8_4000x3000.jpg","category":"Dining Room","obsCategoryId":"3FO4K4VY9KC2","username":"yixirightthere","avatar":"https://lh3.googleusercontent.com/a/ACg8ocIlJiRWhF2rpLFrbYVPU0qeM8jxw4qTgvsVoWYhVUZc=s96-c","title":"Elegant Minimalist Dining Room with Wood Tones","description":"This modern dining room features a minimalist design with dark marble floors, white walls, and an elegant display cabinet. The white marble dining table contrasts beautifully with dark brown chairs. Artwork and greenery add a cultural and natural touch. The ceiling lights enhance the modern ambiance, creating a sophisticated and high-end atmosphere.","images":["https://qhrenderpicoss.kujiale.com/r/2024/05/16/L1D0S109B0ENDPNNVIDQUWIUC4LUFX7QVLAA8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/16/L1D0S109B0ENDPNNVIDQUWIUC4LUFX7QVLAA8_4000x3000.jpg","https://qhrenderpicoss.kujiale.com/permanent/recycle7Day/r/2024/05/15/L3D124S21ENDPNNVHIYUWIMFMLUFX72TAGA8_4000x3000_b_colorful.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/16/L1D0S109B0ENDPNNVIDQUWISUWLUFX7QVIBY8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/permanent/recycle7Day/r/2024/05/15/L3D187S21ENDPNNVFRAUWI4HWLUFX72TEWQ8_3840x2160_b_colorful.jpg"],"viewCount":6079,"collect":false,"collectCount":33,"pathVariable":"/ideas/dining-room-elegant-minimalist-dining-room-with-wood-tones-idtd0-vp~3FO4K4XRC2L9"},{"obsContentId":"3FO4K4XRB7I0","obsDesignId":"3FO3JANFMARX","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2024/05/21/L1D0S109B0ENDPNKM3FIUWJ7OYLUFX7IIMFI8_3840x2160.jpg","category":"Children's Room","obsCategoryId":"3FO4K4VY9NO3","username":"yixirightthere","avatar":"https://lh3.googleusercontent.com/a/ACg8ocIlJiRWhF2rpLFrbYVPU0qeM8jxw4qTgvsVoWYhVUZc=s96-c","title":"Creamy Minimalist Kids' Room with Warm Wood","description":"This children's room embraces a minimalist design with creamy walls and warm wood tones. Deep brown curtains contrast with the light palette, while green accents on pillows and cushions add visual interest. Practical furniture in wood, combined with a gray carpet and playful wooden toys, creates a cozy and functional space.","images":["https://qhrenderpicoss.kujiale.com/r/2024/05/20/L3D582S21ENDPNKMX7YUWI5DELUFX7XBMSQ8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/21/L1D0S109B0ENDPNKM3FIUWJ7OYLUFX7IIMFI8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/20/L3D602S21ENDPNKMXTAUWI5DELUFX7XBMOI8_3840x3840.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/20/L3D582S21ENDPNKMX7YUWI5DELUFX7XBMSQ8_3840x2160.jpg"],"viewCount":6560,"collect":false,"collectCount":19,"pathVariable":"/ideas/children%27s-room-creamy-minimalist-kids-room-with-warm-wood-idtd0-vp~3FO4K4XRB7I0"},{"obsContentId":"3FO4K4XRAPRU","obsDesignId":"3FO3JANFNJ9B","imageUrl":"https://qhrenderpicoss.kujiale.com/r/2024/05/24/L1D0S109B0ENDPNIVPLIUWLGWQLUFX63MBDQ8_3840x2160.jpg","category":"Living Room","obsCategoryId":"3FO4K4VYAPGE","username":"yixirightthere","avatar":"https://lh3.googleusercontent.com/a/ACg8ocIlJiRWhF2rpLFrbYVPU0qeM8jxw4qTgvsVoWYhVUZc=s96-c","title":"Modern Minimalist Living Room with Neutral Tones","description":"This modern minimalist living and dining room features a neutral color palette dominated by black, white, and gray. The design emphasizes simplicity, functionality, and comfort. The walls are adorned with circular decorations and linear designs, adding visual depth. Soft furnishings like curtains, sofa covers, and cushions complement the hard decor, creating a cohesive and inviting atmosphere.","images":["https://qhrenderpicoss.kujiale.com/r/2024/05/24/L1D0S109B0ENDPNIVPLIUWLYIALUFX63MBQQ8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/24/L1D0S109B0ENDPNIVPLIUWLGWQLUFX63MBDQ8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/permanent/recycle7Day/r/2024/05/23/L3D187S21ENDPNIVN2IUWIFMWLUFX732MHQ8_3840x2160_b_colorful.jpg","https://qhrenderpicoss.kujiale.com/r/2024/05/24/L1D0S109B0ENDPNIVPLIUWLYIALUFX63MBQQ8_3840x2160.jpg","https://qhrenderpicoss.kujiale.com/permanent/recycle7Day/r/2024/05/23/L3D187S21ENDPNIVLTAUWICXQLUFX732MSI8_3840x2160_b_colorful.jpg"],"viewCount":5301,"collect":false,"collectCount":15,"pathVariable":"/ideas/living-room-modern-minimalist-living-room-with-neutral-tones-idtd0-vp~3FO4K4XRAPRU"}],"f":null};
+        window.ideasCategories = ["Living Room","Bedroom","Others","Kitchen","Outdoor","Home Office","More Rooms","Children's Room","Commercial Spaces","Utility Laundry","Entertainment Room"];
+        window.g_ideas_pubconfig = {"categories":{"list":[{"key":"Living room","text":"idea_living_room"},{"key":"Dining Room","text":"idea_dining_room"},{"key":"Bedroom","text":"idea_bedroom"},{"key":"Bathroom","text":"idea_bashroom"},{"key":"Kitchen","text":"idea_kitchen"}]}};
+        window.ideaMobile = false;
+    </script>
+    <div id="ideas-micro-app">
+        <header>
+            
+                <div>Living Room</div>
+                <div>Bedroom</div>
+                <div>Others</div>
+                <div>Kitchen</div>
+                <div>Outdoor</div>
+                <div>Home Office</div>
+                <div>More Rooms</div>
+                <div>Children's Room</div>
+                <div>Commercial Spaces</div>
+                <div>Utility Laundry</div>
+                <div>Entertainment Room</div></header>
+        <main>
+            
+                <h3> Modern Gray Kitchen with Open Layout</h3>
+                <h4> This contemporary kitchen features an open layout with large windows letting in natural light. The gray and white color scheme is complemented by black and yellow accents. The kitchen cabinets are in black and white, with a central island in dark marble. The space is completed with modern lighting and a cozy yellow sofa in the adjacent living area.</h4>
+                <h3> Modern Minimalist Grey Bedroom Design</h3>
+                <h4> This minimalist bedroom features a grey and white color palette with vertical line decorative wall panels. The deep wooden headboard wall contrasts beautifully with the light walls. A grey bedspread, dark curtains, and a variety of throw pillows add comfort and style. An open concept wardrobe with glass doors enhances the modern aesthetic.</h4>
+                <h3> Modern Gray Bedroom with Contemporary Design</h3>
+                <h4> This contemporary bedroom features a neutral gray palette, enhancing its serene ambiance. The design focuses on simplicity, comfort, and functionality. Deep curtains contrast with light walls, while a gray carpet adds warmth. Geometric ceiling lights and art on the walls create visual interest. Grey furniture, including a sleek bed and side tables, complements the overall look.</h4>
+                <h3> Modern Minimalist Dining Room with Green Accents</h3>
+                <h4> This dining room features a minimalist and transitional design with deep brown walls adorned with simple line decorations. Complementing the warm tones, light green curtains and a potted plant bring vitality. The space is brightened by light wooden floors and illuminated by a pendant light. The dining set in brown and green, paired with clean white and silver cutlery, offers a cozy dining experience.</h4>
+                <h3> Modern Gray & Orange Living Room Decor</h3>
+                <h4> This contemporary living room features a gray and orange color scheme. Deep gray curtains, sofa, and carpet pair with orange accent pillows and a decorative wall panel for a vibrant look. Light wooden floors and a circular ceiling light add warmth and modernity. Wooden partitions create space division without losing openness.</h4>
+                <h3> Minimalist White Living Room with Nature Touches</h3>
+                <h4> This modern minimalist living room features a white and light wood color scheme, creating a bright and airy space. The abstract artwork and woven pendant lights add artistic and natural elements. Large windows let in plenty of natural light, enhancing the openness. Soft grey sofa with green throw pillows and a geometric rug complement the decor. Green plants in corners bring life and vitality to the room.</h4>
+                <h3> Modern Minimalist Bathroom with Natural Light</h3>
+                <h4> This modern minimalist bathroom features a bright and open design with large windows showcasing a green view. The white and light-colored decor is complemented by sleek black fixtures, including a standalone tub and faucet. A gray stone countertop and dark wood ceiling details add contrast and warmth.</h4>
+                <h3> Superhero Kids Room with Blue & Gray Decor</h3>
+                <h4> This kids' room features a superhero theme with a comic-style mural of Captain America on the wall. The room is adorned with striped bedding, colorful pillows, and a geometric rug. Deep blue curtains add depth, while a green and gray headboard complements the modern decor. Toys, books, and a Batman doll enhance the playful atmosphere.</h4>
+                <h3> Modern Minimalist Grey Bedroom Design</h3>
+                <h4> This contemporary bedroom features a minimalist design with a focus on practicality and comfort. The walls are painted in a light gray, complemented by deep gray curtains and varying shades of gray beddings. Black and white geometric patterned sheets add modernity. The room is adorned with natural-themed decor and mirrors, reflecting a blend of nature and modernity. Light wooden floors and ceiling lights contribute to a bright, harmonious space.</h4>
+                <h3> Modern Minimalist Bedroom with Gray and Green Tones</h3>
+                <h4> This modern minimalist bedroom features a deep green striped wallpaper accent wall, paired with white walls and light wooden floors for a balanced look. Gray and white bedding adds simplicity, while light carpet and curtains offer warmth. The design focuses on functionality and comfort, creating a serene space ideal for rest and rejuvenation.</h4>
+                <h3> Minimalist Living Room with Gray Tone</h3>
+                <h4> This contemporary living room features a minimalist design with white and gray tones, creating a clean and bright atmosphere. The gray cloth sofa matches with pillows, while the large windows let in plenty of natural light. The wall-mounted TV and modern fireplace add both functionality and aesthetics. Unique pendant and floor lamps provide artistic and functional lighting.</h4>
+                <h3> Minimalist Grey Bedroom Design Ideas</h3>
+                <h4> This modern minimalist bedroom features neutral tones with gray walls, cream and white beddings, and light wooden floors. The open closet design adds functionality, while white curtains and a striped carpet enhance the cozy atmosphere. The design emphasizes simplicity, comfort, and practicality.</h4>
+                <h3> Modern Gray Master Bedroom Design Ideas</h3>
+                <h4> This contemporary bedroom features a neutral color palette with gray and black & white accents. The design focuses on simplicity, functionality, and comfort. The room boasts a white leather headboard, varied throw pillows, a geometric patterned carpet, and an open-concept wardrobe with black metal frames and glass doors. The light wooden floor and embedded lighting contribute to a bright and cozy atmosphere.</h4>
+                <h3> Modern Transitional Dining Room with Wood Tones</h3>
+                <h4> This modern transitional dining room features an open kitchen and dining area with a focus on simplicity, nature, and comfort. Wooden elements and neutral tones create a warm and serene atmosphere. Gray and wooden walls, a white spotted floor, and minimalistic furniture contribute to a clean, bright look. The dining table is adorned with simple decor like dry flowers and pinecones.</h4>
+                <h3> Modern Minimalist Bedroom Design Ideas</h3>
+                <h4> This modern bedroom features a minimalist design with neutral tones, a geometric wallpaper headboard, and a black and white carpet. The room is functional and comfortable, with hidden curtains, a fan light, and coordinating bedding and throw pillows. The design aims for simplicity and relaxation, making it an ideal space to unwind.</h4>
+                <h3> Contemporary Gray Living Room with Minimalist Decor</h3>
+                <h4> This contemporary living room features gray concrete walls and floors, paired with a white sofa and colorful cushions. A yellow bicycle adds a pop of color. A round wooden coffee table holds books and a lamp, enhancing the minimalist and functional design. The ceiling is kept simple, creating an open and bright atmosphere.</h4>
+                <h3> Elegant Art Deco Bedroom with Gray Tone</h3>
+                <h4> This modern bedroom features an elegant Art Deco design with gray and white tones. The wooden-textured headboard wall adds warmth, while deep gray curtains ensure privacy. The bed is dressed in gray and white linens, complemented by a striped carpet. Ceiling lights and a sleek吊灯 enhance the room's sophistication, creating a comfortable and luxurious atmosphere.</h4>
+                <h3> Elegant Minimalist Dining Room with Wood Tones</h3>
+                <h4> This modern dining room features a minimalist design with dark marble floors, white walls, and an elegant display cabinet. The white marble dining table contrasts beautifully with dark brown chairs. Artwork and greenery add a cultural and natural touch. The ceiling lights enhance the modern ambiance, creating a sophisticated and high-end atmosphere.</h4>
+                <h3> Creamy Minimalist Kids' Room with Warm Wood</h3>
+                <h4> This children's room embraces a minimalist design with creamy walls and warm wood tones. Deep brown curtains contrast with the light palette, while green accents on pillows and cushions add visual interest. Practical furniture in wood, combined with a gray carpet and playful wooden toys, creates a cozy and functional space.</h4>
+                <h3> Modern Minimalist Living Room with Neutral Tones</h3>
+                <h4> This modern minimalist living and dining room features a neutral color palette dominated by black, white, and gray. The design emphasizes simplicity, functionality, and comfort. The walls are adorned with circular decorations and linear designs, adding visual depth. Soft furnishings like curtains, sofa covers, and cushions complement the hard decor, creating a cohesive and inviting atmosphere.</h4></main>
+    </div>
+    
+<script  src="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-ideas-micro/micros/coohom-market-micros-cmn-ideas/entry.30fc7505d746747c0650.js?pn=coohom-market-micros-cmn-ideas&ps=1486658" ps="1486658" crossorigin="anonymous"></script>
+</micro>
+        </div>
+    </section>
+<section class="section-workflow">
+        <h2 class="title">How to Design a Home Online: Free Tools for a Perfect Space</h2>
+        <p class="desc">Explore free online tools like mohit to design your dream home with ease. Start your home design journey today with moihit!</p>
+        <a class="btn-link" href="/pub/market/portal/thankyou">
+            <span>Design for free</span>
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.95416 3.78589L14.6682 8.49988L9.95483 13.2139L9.0115 12.2712L12.1155 9.16655H1.3335V7.83322H12.1155L9.0115 4.72855L9.95416 3.78589Z" fill="#3A66FF"/>
+            </svg>
+        </a>
+        <ul class="flow-list"><li class="workflow-item">
+        <div class="top-wrapper">
+            <img class="icon" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1741056818913/item1-icon.svg" alt="icon"/>
+            <h3 class="item-title">Create or Upload a Floor Plan with mohit – Easy Design</h3>
+            <p class="item-desc">Bring your ideas to life with mohit! Start from scratch or upload an existing floor plan. Our smart tech converts it to a digital layout in minutes, with drag-and-drop tools and 3D visualization.</p>
+        </div>
+        <img class="item-img" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/png/1741057227832/item1.png?x-oss-process=image/resize,/format,webp"/>
+    </li><li class="workflow-item">
+        <div class="top-wrapper">
+            <img class="icon" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1741056818887/item2-icon.svg" alt="icon"/>
+            <h3 class="item-title">Design & Decorate Your Home in 3D – Endless Possibilities</h3>
+            <p class="item-desc">Transform your home with mohit’s vast selection of furniture and décor. Choose from thousands of stylish pieces and customize every detail. Design a space that’s uniquely yours, from a room to an entire home.</p>
+        </div>
+        <img class="item-img" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/png/1741057227939/item2.png?x-oss-process=image/resize,/format,webp"/>
+    </li><li class="workflow-item">
+        <div class="top-wrapper">
+            <img class="icon" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1741056818886/item3-icon.svg" alt="icon"/>
+            <h3 class="item-title">Experience Fast, High-Quality 4K Rendering in Real Time</h3>
+            <p class="item-desc">Bring your designs to life instantly with mohit’s advanced 4K rendering. Enjoy realistic lighting, shadows, and colors, with real-time adjustments for immediate, high-definition results and a seamless experience.</p>
+        </div>
+        <img class="item-img" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/png/1741057227999/item3.png?x-oss-process=image/resize,/format,webp"/>
+    </li><li class="workflow-item">
+        <div class="top-wrapper">
+            <img class="icon" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1741056818885/item4-icon.svg" alt="icon"/>
+            <h3 class="item-title">Unlock Infinite Possibilities with AI-Powered Design</h3>
+            <p class="item-desc">Use mohits’s AI-driven 3D rendering tools to visualize your home before committing. Make real-time adjustments in a virtual environment and ensure every detail aligns with your vision, avoiding costly mistakes.</p>
+        </div>
+        <img class="item-img" loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/png/1741057227937/item4.png?x-oss-process=image/resize,/format,webp"/>
+    </li></ul>
+    </section>
+    <section class="section-tools">
+        <div class="section-content">
+            <h2 class="silence-heading" >Unleash Your Creativity with mohit, the Best 3D Home Designs</h2>
+            <div class="section-title" data-splitting>Unleash Your Creativity with mohit, the Best 3D Home Design Software</div>
+            <div class="tools-list">
+                
+                    <div class="tool-item">
+                        <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170038/logo1.png" loading="lazy" alt=""/>
+                    </div>
+                
+                    <div class="tool-item">
+                        <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170028/logo2.png" loading="lazy" alt=""/>
+                    </div>
+                
+                    <div class="tool-item">
+                        <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170038/logo3.png" loading="lazy" alt=""/>
+                    </div>
+                
+                    <div class="tool-item">
+                        <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170039/logo4.png" loading="lazy" alt=""/>
+                    </div>
+                
+                    <div class="tool-item">
+                        <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170024/logo5.png" loading="lazy" alt=""/>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="section-designers">
+        <div class="section-content">
+            <h2 class="silence-heading" data-splitting>mohit Global Designer Community</h2>
+            <div class="section-title" data-splitting>mohit Global Designer Community</div>
+            <div class="section-desc">Connect with designers, share inspirations, and shape the future of design together.</div>
+            <div class="buttons-wrapper">
+                <a class="a-btn secondary" href="/pub/saas/workbench?redirecturl=/kitchen-and-bath-design&ctv=kb" >Learn More</a>
+
+            </div>
+            <div class="counts-wrapper">
+                <ul class="counts-list">
+                    
+                        <li class="count-item is-visible">
+                            <div class="text">
+                                <b class="count">10</b>
+                                <b>M+</b>
+                            </div>
+                            <div class="desc">Projects plans created daily.</div>
+                        </li>
+                    
+                        <li class="count-item is-visible">
+                            <div class="text">
+                                <b class="count">400</b>
+                                <b>K+</b>
+                            </div>
+                            <div class="desc">Projects rendered daily</div>
+                        </li>
+                    
+                        <li class="count-item is-visible">
+                            <div class="text">
+                                <b class="count">1</b>
+                                <b>M+</b>
+                            </div>
+                            <div class="desc">Five-star reviews</div>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="designers-grid">
+                
+                    <div class="designer-item fadeInLeft is-visible">
+                        <div class="image-wrapper">
+                            <img src="//qhstatic-sg-s3.coohom.com/image/jpg/1716360192843/review1.jpg" loading="lazy"/>
+                        </div>
+                        <div class="text-wrapper">
+                            <div class="designer">
+                                <div class="avatar">
+                                    <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170023/avatar1.png" loading="lazy"/>
+                                </div>
+                                <div class="info">
+                                    <div>Susan</div>
+                                    <span>Interior Designer</span>
+                                </div>
+                            </div>
+                            <p>"mohit has sped up my 3D visual presentation time. I no longer have to use two different programs. mohit does it all and renders in seconds. The other great thing is it's a cloud-based software so my computer isn't running slow all day either." </p>
+                        </div>
+                    </div>
+                
+                    <div class="designer-item fadeInLeft is-visible">
+                        <div class="image-wrapper">
+                            <img src="//qhstatic-sg-s3.coohom.com/image/jpg/1716360202741/review2.jpg" loading="lazy"/>
+                        </div>
+                        <div class="text-wrapper">
+                            <div class="designer">
+                                <div class="avatar">
+                                    <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170024/avatar2.png" loading="lazy"/>
+                                </div>
+                                <div class="info">
+                                    <div>Natalia Wright</div>
+                                    <span>Interior Designer</span>
+                                </div>
+                            </div>
+                            <p>“I was drawn to its lightning-fast rendering feature, and the quality is so vivid, I just couldn’t stop designing and rendering, because it’s too real.”</p>
+                        </div>
+                    </div>
+                
+                    <div class="designer-item fadeInLeft is-visible">
+                        <div class="image-wrapper">
+                            <img src="//qhstatic-sg-s3.coohom.com/image/jpg/1716360197209/review3.jpg" loading="lazy"/>
+                        </div>
+                        <div class="text-wrapper">
+                            <div class="designer">
+                                <div class="avatar">
+                                    <img src="//qhstatic-sg-s3.coohom.com/image/png/1716360170027/avatar3.png" loading="lazy"/>
+                                </div>
+                                <div class="info">
+                                    <div>John Smith</div>
+                                    <span>Interior Designer</span>
+                                </div>
+                            </div>
+                            <p>"mohit's visualizations are the best. My clients really appreciate seeing their future home in a video. It really helped our team's sales."</p>
+                        </div>
+                    </div>
+                
+
+            </div>
+        </div>
+    </section>
+<section class="section-review is-home" id="g2-badges-section">
+        <h2 class="review-title">Trusted by the best in home design software rankings</h2>
+        <p class="review-desc">Leader in Visual Configuration, Product Customization, 3D Rendering, and 3D Modeling.</p>
+        <div class="score-wrapper">
+            <div class="left-wrapper">
+                <img src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731909827212/score-icon.svg" loading="lazy" alt="score"/>
+                <div class="text-wrapper">
+                    <div class="score">4.6</div>
+                    <ul class="star-list"><li>
+                                <img src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731909827213/whole-star.svg" lazy="loading" alt="star"/>
+                            </li><li>
+                                <img src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731909827213/whole-star.svg" lazy="loading" alt="star"/>
+                            </li><li>
+                                <img src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731909827213/whole-star.svg" lazy="loading" alt="star"/>
+                            </li><li>
+                                <img src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731909827213/whole-star.svg" lazy="loading" alt="star"/>
+                            </li><li>
+                                <img src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731909827213/half-star.svg" lazy="loading" alt="star"/>
+                            </li></ul>
+                </div>
+            </div>
+            <div class="right-wrapper">
+                <a class="no-login text" href="https://www.g2.com/products/coohom/reviews#reviews" target="_blank">Read Reviews</a>
+                <img class="arrow-icon" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731910486189/arrow-icon.svg" loading="lazy" alt="arrow"/>
+            </div>
+        </div>
+        <div class="badge-wrapper">
+            <ul class="badge-list"><li class="badge-item">
+                        <a class="no-login" title="mohit is a leader in 3D Rendering on G2" target="_blank" href="https://www.g2.com/products/coohom/reviews?utm_source=rewards-badge">
+                            <img class="badge-logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1735007943020/leader2025.svg" alt="Coohom is a leader in 3D Rendering on G2" loading="lazy"/>
+                        </a>
+                    </li><li class="badge-item">
+                        <a class="no-login" title="mohit is a leader in 3D Rendering on G2" target="_blank" href="https://www.g2.com/products/coohom/reviews?utm_source=rewards-badge">
+                            <img class="badge-logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1735007943019/most2025.svg" alt="Coohom is a leader in 3D Rendering on G2" loading="lazy"/>
+                        </a>
+                    </li><li class="badge-item">
+                        <a class="no-login" title="mohit is a leader in 3D Rendering on G2" target="_blank" href="https://www.g2.com/products/coohom/reviews?utm_source=rewards-badge">
+                            <img class="badge-logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1735007943016/fastest2025.svg" alt="Coohom is a leader in 3D Rendering on G2" loading="lazy"/>
+                        </a>
+                    </li><li class="badge-item">
+                        <a class="no-login" title="mohit is a leader in Small-Business 3D Modeling on G2" target="_blank" href="https://www.g2.com/products/coohom/reviews?utm_source=rewards-badge">
+                            <img class="badge-logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1735007943037/small2025.svg" alt="Coohom is a leader in Small-Business 3D Modeling on G2" loading="lazy"/>
+                        </a>
+                    </li></ul>
+            <div class="other-reviews">
+                <div class="left-line"></div>
+                <div class="other">other Reviews</div>
+                <div class="right-line"></div>
+            </div>
+            <ul class="logo-list"><li class="logo-item">
+                        <a class="no-login" target="_blank" href="https://www.getapp.com/emerging-technology-software/a/coohom/reviews/">
+                            <img class="logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731900380142/get-app.svg" alt="" loading="lazy"/>
+                        </a>
+                    </li><li class="logo-item">
+                        <a class="no-login" target="_blank" href="https://www.capterra.com/p/192882/Coohom/reviews?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge">
+                            <img class="logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731900380145/capterra.svg" alt="" loading="lazy"/>
+                        </a>
+                    </li><li class="logo-item">
+                        <a class="no-login" target="_blank" href="https://www.softwareadvice.com/3d-cad/coohom-profile/reviews/">
+                            <img class="logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1732002949320/advice.svg" alt="" loading="lazy"/>
+                        </a>
+                    </li><li class="logo-item">
+                        <a class="no-login" target="_blank" href="https://sourceforge.net/software/product/Coohom/">
+                            <img class="logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731900380134/top.svg" alt="" loading="lazy"/>
+                        </a>
+                    </li><li class="logo-item">
+                        <a class="no-login" target="_blank" href="https://slashdot.org/software/p/Coohom/">
+                            <img class="logo" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1731900380123/user.svg" alt="" loading="lazy"/>
+                        </a>
+                    </li></ul>
+        </div>
+    </section></main>
+
+<script>
+    document.body.className += ' coohom-footer-theme-light';
+</script>
+<micro data-pub-type="micro">
+    
+<script>window.__g_cdnHost_2269da8d8b92006051560dbcf55b6799 = "//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros";</script>
+<link  rel="stylesheet" type="text/css" href="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros/micros/coohom-market-micros-cmn-c-site-footer/footer.b6c2f2ad6efda168d5d6.css?pn=coohom-market-micros-cmn-c-site-footer&ps=1483971">
+<script type="pub-meta" pt="micro" pn="coohom-market-micros-cmn-c-site-footer" pv="defualttag" ps="1483971"></script>
+<footer >
+        <section id="footer-up-section">
+<div class="c-opt-navigation-menu-container">
+    
+        <ul><li><ul class="secondary-submenu">
+        <p class="secondary-title">Products</p>
+        <span data-type="icon" data-icon-name="UpOutlined"></span>
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/floor-planner">
+                
+                Floor Planner
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/interior-designer">
+                
+                Interior Design
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/kitchen-and-bath-design">
+                
+                Kitchen & Closet Design
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/2D-Design-Tool">
+                
+                AI Home Design 
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/b2b/products/photo-and-video-studio">
+                
+                Photo Studio
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/b2b/products/3dviewer-and-ar">
+                
+                3D Viewer
+            </a>
+        </li>
+            
+        
+    </ul></li></ul>
+    
+        <ul><li><ul class="secondary-submenu">
+        <p class="secondary-title">3D Models</p>
+        <span data-type="icon" data-icon-name="UpOutlined"></span>
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/3d-model">
+                
+                Model Library
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener noreferrer" href="
+https://e.coohom.com/3d-models-upload-for-brand">
+                
+                Upload Brand Models
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/accurate-3d-modeling">
+                
+                 3D Modeling
+            </a>
+        </li>
+            
+        
+    </ul></li><li><ul class="secondary-submenu">
+        <p class="secondary-title">Resources</p>
+        <span data-type="icon" data-icon-name="UpOutlined"></span>
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/design_community">
+                
+                Home Design Ideas
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/learn">
+                
+                Tutorial
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="HelpCenter" target="_blank" rel="noopener noreferrer" href="
+https://helpcenter.coohom.com">
+                
+                Help Center
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="article" target="_blank" rel="noopener " href="
+/article">
+                
+                Article
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/pub/market/portal/app/download">
+                
+                mohit App
+            </a>
+        </li>
+            
+        
+    </ul></li></ul>
+    
+        <ul><li><ul class="secondary-submenu">
+        <p class="secondary-title">Contact</p>
+        <span data-type="icon" data-icon-name="UpOutlined"></span>
+        
+            
+                <li>
+            <span>mohit.Sales@.com</span>
+        </li>
+            
+        
+            
+                <li>
+            <span>New York Office</span>
+        </li>
+            
+        
+            
+                <li>
+            <span>Global Offices</span>
+        </li>
+            
+        
+            
+                <li>
+            <span>London, UK</span>
+        </li>
+            
+        
+            
+                <li>
+            <span>Shanghai, China</span>
+        </li>
+            
+        
+            
+                <li>
+            <span>Tokyo, Japan</span>
+        </li>
+            
+        
+            
+                <li>
+            <span>Singapore</span>
+        </li>
+            
+        
+            
+                <li>
+            <span>Seoul, Korea</span>
+        </li>
+            
+        
+    </ul></li></ul>
+    
+        <ul><li><ul class="secondary-submenu">
+        <p class="secondary-title">Company</p>
+        <span data-type="icon" data-icon-name="UpOutlined"></span>
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/pub/market/portal/about-us">
+                
+                About Us
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener " href="
+/pub/market/portal/contact">
+                
+                Contact Us
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="twnEducation" target="_blank" rel="noopener noreferrer" href="
+https://www.e.coohom.com/tweducation">
+                
+                Education
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="Affiliate" target="_blank" rel="noopener noreferrer" href="
+https://www.e.coohom.com/affiliate-program">
+                
+                Affiliate Program
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener noreferrer" href="
+https://www.e.coohom.com/partnerprogram">
+                
+                Partner Program
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="indianPartner" target="_blank" rel="noopener noreferrer" href="
+https://www.e.coohom.com/indianofficialpartner">
+                
+                Indian Partner
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="polandPartner" target="_blank" rel="noopener noreferrer" href="
+https://www.e.coohom.com/polishofficialpartner">
+                
+                Affiliate
+            </a>
+        </li>
+            
+        
+            
+                <li>
+            <a data-key="" target="_blank" rel="noopener noreferrer" href="
+https://www.linkedin.com/company/kujiale/jobs/">
+                
+                Careers
+            </a>
+        </li>
+            
+        
+    </ul></li></ul>
+    
+</div>
+
+        <li class="subscribe">
+            <div class="c-subscribe-wrapper">
+                <div id="sendcloud-embed-subscribe"></div>
+            </div>
+        </li>
+    </ul>
+</div></section><div id="copyright-opt">
+    <div class="pc-container">
+        <div class="left-area">
+            <span>2025 mohit, Inc. All Rights Reserved.</span>
+            <a href="/pub/market/portal/privacy-policy">Privacy Policy</a>
+            <a href="/pub/market/portal/user-agreement">User Agreement</a>
+        </div>
+        <div class="right-area">
+            <div class="social-media-link">
+                <a href="https://www.linkedin.com/company/kujiale" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="LinkedinFilled"></span>
+                </a>
+                <a href="https://twitter.com/coohom" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="TwitterFilled"></span>
+                </a>
+                <a href="https://www.facebook.com/coohom" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="FacebookFilled"></span>
+                </a>
+                <a href="https://www.instagram.com/coohom" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="InstagramFilled"></span>
+                </a>
+            </div>
+            <div class="mohit-logo">
+                <span data-type="icon" data-icon-name="mohitOutlined"></span>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-container">
+        <div class="top-area">
+            <a href="/pub/market/portal/privacy-policy">Privacy Policy</a>
+            <a class="is-last-child" href="/pub/market/portal/user-agreement">User Agreement</a>
+            <div class="social-media-link">
+                <a href="https://www.linkedin.com/company/kujiale" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="LinkedinFilled"></span>
+                </a>
+                <a href="https://twitter.com/mohit" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="TwitterFilled"></span>
+                </a>
+                <a href="https://www.facebook.com/mohit" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="FacebookFilled"></span>
+                </a>
+                <a href="https://www.instagram.com/mohit" target="_blank" rel="noreferrer">
+                    <span data-type="icon" data-icon-name="InstagramFilled"></span>
+                </a>
+            </div>
+        </div>
+        <div class="bottom-area">
+            <div class="coohom-logo">
+                <span data-type="icon" data-icon-name="CoohomOutlined"></span>
+            </div>
+            <p>2025 Coohom, Inc. All Rights Reserved.</p>
+        </div>
+    </div>
+</div>
+</footer>
+    <div id="btn-app">
+        <div class="logo">
+            <img loading="lazy" src="//qhstatic-sg-s3.coohom.com/image/svgxml/1666596571969/logo-blue.svg" alt="coohom logo">
+        </div>
+        <span style="font-size:14px">Open in App</span>
+    </div>
+    
+<script  src="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros/micros/coohom-market-micros-cmn-c-site-footer/footer.3689b69e5a241c9128cb.js?pn=coohom-market-micros-cmn-c-site-footer&ps=1483971" ps="1483971" crossorigin="anonymous"></script><script async src="//qhstatic-sg-s3.coohom.com/middleware/mq/1.0.0/index.js?env=site"></script>
+    <script async src="https://www.sendcloud.net/v3/static/subscribe/js/subscribe.js"></script>
+    <script>
+        const title = "Subscribe to the mohit Weekly and enjoy seven days of Interior Design news in one newsletter with worldwide delivery.\n";
+        const successMsg = "Hi there,Thanks for signing up! You'll receive a few emails that will offer email-exclusive offers & creative projects!";
+        window.addEventListener('load', () => {
+            const option = {
+                type: 'embed',
+                expires: '0',
+                trigger: 'load',
+                invitecode: '6cf615a0-be4c-4db6-a04a-ff521a5779ee',
+                title,
+                lang: 'en',
+                successMsg,
+                themeColor: '#111'
+            }
+            if (sendcloud) {
+                sendcloud.subscribe(option);
+            }
+        });
+        window.cSiteHelpCenterConfig = {"meta":{"priority":0,"link":""},"TH":{"link":"https://coohomth.notion.site/COOHOM-f15eb98230674e8283b857d7b3dfe1d6"},"KR":{"link":"https://coohom.notion.site/ef6d4fca2c4a4ba59c453fc65dc2f86e?v=ee9be360f05e40b3bc38b91b249de011"}}
+        window.cSiteAffiliateConfig = {"ID":{"link":"https://www.e.coohom.com/affiliate-program/id"},"VN":{"link":"https://www.e.coohom.com/affiliate-program/vi"},"TH":{"link":"https://www.e.coohom.com/affiliate-program/th"},"TR":{"link":"https://www.e.coohom.com/affiliate-program/tr"},"FR":{"link":"https://www.e.coohom.com/affiliate-program/fr"},"IT":{"link":"https://www.e.coohom.com/affiliate-program/it"},"DE":{"link":"https://www.e.coohom.com/affiliate-program/de"}}
+    </script>
+</micro>
+        <micro data-pub-type="micro">
+    
+<script>window.__g_cdnHost_169d15367b5740955111cfc3e3fff41f = "//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros";</script>
+<link  rel="stylesheet" type="text/css" href="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros/micros/coohom-market-micros-cmn-c-site-cookie/cookie.b075bd66795fff32d705.css?pn=coohom-market-micros-cmn-c-site-cookie&ps=1347268">
+<script type="pub-meta" pt="micro" pn="coohom-market-micros-cmn-c-site-cookie" pv="defualttag" ps="1347268"></script><div class="cookie-notice position-fixed bottom-0 w-100" style="display: none">
+    <div class="container">
+        <div class="row" style="--bs-gutter-x: 0">
+            <p class="cookie-notice-details col-11 col-lg-9">
+                We use cookies and similar tools to bring you a smooth and convenient experience on our site. To learn more about how we use cookies, view our <a href="javascript:void(0);"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Statement on Cookies</a> here.
+            </p>
+            <div class="cookie-notice-btns col-1 col-lg-3 align-self-lg-center">
+                <img
+                    src='//qhstatic-sg-s3.coohom.com/newt/102744/image/svgxml/1627286243399/7D975E66C8C191997C02A99C9E6B9D4F.svg'
+                    loading="lazy"
+                    alt='close'
+                    data-kio-action="close"
+                    class="btn-accept-cookie btn offset-md-10"
+/>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-body small container">
+            <div id="show_cookie_notices" class="cookie_pages">
+                <div class="title-box">
+                    <div class="close float-end">
+                        <img
+                            src='//qhstatic-sg-s3.coohom.com/newt/102744/image/svgxml/1627286243399/7D975E66C8C191997C02A99C9E6B9D4F.svg'
+                            loading="lazy"
+                            alt='close'
+                            data-kio-action="close"
+                            class="btn-accept-cookie btn"
+/>
+                    </div>
+                    <div>
+                        <div class='cookie-title'>Coohom Cookie Notice</div>
+                    </div>
+                </div>
+                <section class="main-content">
+                    <p>Along with
+                        <a href="/pub/market/portal/c/user-agreement" target="_blank">
+                            User Agreement
+                        </a> and
+                        <a href="/pub/market/portal/c/privacy-policy" target="_blank">
+                            Privacy Policy
+                        </a>
+                        provided by mohit Inc. and its affiliates (“<strong>we</strong>”, “<strong>us</strong>” or
+                        “<strong>mohit
+                            Group</strong>”), this Notice provides you (or “<strong>user</strong>”) with information
+                        about the
+                        cookies that are used by the features and services of Coohom official website or mohit Platform
+                        (“<strong>Coohom
+                            Platform</strong>”). This Notice will be reviewed from time to time to ensure that its
+                        content is
+                        kept
+                        up-to-date. If any changes are made, we will publish the latest version of the Notice here. When
+                        we make
+                        significant changes, we will notify you of the change the next time you visit mohit Platform or
+                        by
+                        other
+                        means of communication.</p>
+                    <dl>
+                        <dt>A. What is cookie & Why do we use cookies</dt>
+                        <p>When you visit mohit Platform, the site asks your browser to store a small piece of data (text
+                            file)
+                            called
+                            a cookie on your device in order to evaluate the performance of the site. We also use
+                            third-party
+                            cookies,
+                            which are cookies from a domain different than the domain of mohit Platform you are visiting,
+                            for
+                            marketing
+                            efforts.</p>
+                        <dt>B. What kind of cookies do we use</dt>
+                        <p>We use the following categories of cookies:</p>
+                        <dd>1. Strictly necessary cookies</dd>
+                        <p>Strictly necessary cookies are necessary for mohit Platform to function and cannot be switched
+                            off in
+                            our
+                            systems. They are usually only set in response to actions made by you which amount to a request
+                            for
+                            services, such as setting your privacy preferences, logging in or filling in forms. You can set
+                            your
+                            browser
+                            to block or alert you about these cookies, but that will cause some parts of mohit Platform to
+                            not
+                            work.</p>
+                        <dd>2. Performance cookies</dd>
+                        <p>Performance cookies allow us to count visits and traffic sources so we can measure and improve
+                            the
+                            performance of our site.They help us to know which pages are the most and least popular and see
+                            how
+                            visitors
+                            move around the site.If you do not allow these cookies we will not know when you have visited
+                            our site
+                            and
+                            will not be able to monitor its performance.</p>
+                        <dd>3. Marketing cookies</dd>
+                        <p>We also cooperate with third - parties that deploy cookies when users interact with marketing
+                            communications.Marketing cookies collect personal information such as your IP address and
+                            clicks.Collected
+                            information is used to evaluate the effectiveness of our marketing campaigns or to provide
+                            better
+                            targeting
+                            for marketing.We do not always have control over those cookies.</p>
+                        <dt>C. What cookies do we use</dt>
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <strong>Categories</strong>
+                                        </th>
+                                        <th>
+                                            <strong>Names of cookies</strong>
+                                        </th>
+                                        <th>
+                                            <strong>Functions</strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowSpan=5>
+                                            <strong>Strictly necessary cookies</strong>
+                                        </th>
+                                        <td>qunhe-jwt</td>
+                                        <td>Remembers your login status: user id, name, email, avatar, character, region</td>
+                                    </tr>
+                                    <tr>
+                                        <td>qunhe-refresh</td>
+                                        <td>Refresh your permissions: user id, name, email, avatar, character, region</td>
+                                    </tr>
+                                    <tr>
+                                        <td>showroom-jwt</td>
+                                        <td>Remembers your user id, email, company, and status</td>
+                                    </tr>
+                                    <tr>
+                                        <td>qh-locale</td>
+                                        <td>Stores your language preferences</td>
+                                    </tr>
+                                    <tr>
+                                        <td>qh-cm-fe-locale</td>
+                                        <td>Stores your language preferences</td>
+                                    </tr>
+                                    <tr>
+                                        <th rowSpan=2>
+                                            <strong>Performance cookies</strong>
+                                        </th>
+                                        <td>ktrackerid</td>
+                                        <td>Monitors abnormal conditions during your visit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ktrackertime</td>
+                                        <td>Monitors abnormal conditions during your visit</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th rowSpan=11>
+                                            <strong>Marketing cookies</strong>
+                                        </th>
+                                        <td>qhdi</td>
+                                        <td>Recognises website visitors(<strong>anonymously</strong>- no personal information is
+                                        collected
+                                        on
+                                        the user)
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>hubspotutk</td>
+                                        <td>Identifies your session</td>
+                                    </tr>
+                                    <tr>
+                                        <td>rdt_uuid</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>hssrc</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>hstc</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>cio</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>cioid</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>fbd</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ajs_anonymous_id</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ajs_user_id</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+                                    <tr>
+                                        <td>messagesUtk</td>
+                                        <td>Identifies which web page you came from</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <dt>D. How do I control and delete cookies</dt>
+                        <dd>1. Cookie settings</dd>
+                        <p>The "<a href="/pub/market/portal/c/cookie-settings" target="_blank">Cookie Settings</a>" can be
+                            utilized
+                            to customize
+                            your
+                            cookie preferences. The "Cookie Settings" will record when you have consented to or rejected our
+                            Notice
+                            and
+                            will ask for consent once a year to ensure users stay up-to-date with changes to our Notice. All
+                            the
+                            performance cookies and marketing cookies are controlled by the "Cookie Settings". You can also
+                            access
+                            the
+                            “Cookie Settings” anytime from the link in the footer of Coohom Platform.</p>
+                        <dd>2. Using your browser</dd>
+                        <p>All of the cookies used on Coohom Platform, on third-party websites and through emails can be
+                            enabled or
+                            disabled through your browser. To control cookies through your browser, follow the instructions
+                            usually
+                            located within the “Help”, “Tools” or “Edit” menus in your browser. Please note that disabling a
+                            cookie
+                            or
+                            category of cookies does not delete the cookie from your browser unless manually completed
+                            through your
+                            browser function.</p>
+                        <dd>3. Cookies set in the past</dd>
+                        <p>Your data collected from cookies can be deleted. If cookies are deleted, the information
+                            collected prior
+                            to
+                            the preference change may still be used. However, we will stop using the disabled cookie to
+                            collect any
+                            further information from your user experience. For marketing cookies, when a user opts out of
+                            tracking,
+                            a
+                            new cookie is placed to prevent users from being tracked.</p>
+                        <dd>4. Impact on the use</dd>
+                        <p>You can set your browser to block strictly necessary cookies, but that will cause some parts of
+                            Coohom
+                            Platform to not work.</p>
+                        <p>You can accept or refuse the use of performance cookies or marketing cookies at any time. If you
+                            choose
+                            to
+                            reject the use of performance cookies or marketing cookies, you will still be able to use Coohom
+                            Platform,
+                            and your use of all the features and areas of Coohom Platform will not be limited.</p>
+                        <dt>E. How often do we update this Notice</dt>
+                        <p>We may update this Notice from time to time or for other operational, legal or regulatory reasons
+                            to make
+                            changes in the cookies we use. Therefore, please re-read this Notice periodically to learn about
+                            our use
+                            of
+                            cookies and related technologies. The date at the top of this Notice indicates when it was last
+                            updated.</p>
+                        <dt>F. Where can I get further information</dt>
+                        <p>If you have any questions about our use of cookies, please feel free to contact us via email at
+                            support@coohom.com.</p>
+                        <p>We will respond to your questions, comments or suggestions within 30 days after we receive them
+                            and
+                            verify
+                            your user identity.</p>
+                    </dl>
+                    <div class="update">Last updated: May 11, 2021</div>
+                    <div class="accept-refuse-btns col-12 align-self-lg-center">
+                        <button type="button"
+                                data-kio-action="refuse"
+                                class="btn-refuse-cookie btn btn-outline-dark font-16">Refuse cookies</button>
+                        <button type="button"
+                                data-kio-action="accept"
+                                class="btn-accept-cookie btn btn-primary font-16 text-white">Accept cookies</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<script  src="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-coohom-market-site-micros/micros/coohom-market-micros-cmn-c-site-cookie/cookie.379a75b0e0b14fb06c52.js?pn=coohom-market-micros-cmn-c-site-cookie&ps=1347268" crossorigin="anonymous"></script>
+</micro>
+        <script>window.$kio || (window.kio && (window.$kio = window.kio(window.g_kio)));</script>
+<script  src="//qhstatic-sg-s3.coohom.com/__p/static/-i18n-fe-site-market-site/pages/coohom-market-portal-c-home/entry.eb461bbb7e801a5441b2.js?pn=coohom-market-portal-c-home&ps=1488870" ps="1488870" crossorigin="anonymous"></script>
+    </body>
+</html>
+
+
+
